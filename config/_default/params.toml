@@ -124,13 +124,13 @@ serverName = "cactus.chat"
 siteName = ""
 
 [comments.giscus]
-repo = ""
-repoID = ""
-category = ""
-categoryID = ""
-mapping = ""
-lightTheme = ""
-darkTheme = ""
+repo = "lxymahatma/lxymahatma.github.io"
+repoID = "R_kgDOMI8xEg"
+category = "Announcements"
+categoryID = "DIC_kwDOMI8xEs4CgF13"
+mapping = "pathname"
+lightTheme = "light"
+darkTheme = "dark"
 reactionsEnabled = 1
 emitMetadata = 0
 
