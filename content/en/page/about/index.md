@@ -8,6 +8,8 @@ menu:
             icon: user
 
 comments: false
+license: false
+readingTime: false
 ---
 
 
