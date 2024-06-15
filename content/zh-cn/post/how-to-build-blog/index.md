@@ -145,7 +145,7 @@ Hugo 有内置的多语言配置，而 Stack 主题也提供了[方法](https://
 * `sidebar.subtitle`: 博客的副标题
 * `article.license.default`: 文章底部的协议
 
-我把 `parames.toml` 里的这两个配置给删除并且设置了多语言，如果不需要的话也可以不修改
+我把 `params.toml` 里的这两个配置给删除并且设置了多语言，如果不需要的话也可以不修改
 
 ## 图片修改
 
