@@ -66,13 +66,27 @@ Hugo 的网站上有许多好看可用的[博客主题](https://themes.gohugo.io
 * 打开仓库模板的页面，可以根据 ReadMe 的内容进行操作。
 * 把创建好的仓库克隆到本地（可以使用命令行 `git clone` 或者直接使用 GitHub Desktop）
 
-### 本地环境配置
+{{<notice tip>}}
+进入仓库的设置页面后点击 `Pages` 即可看到你的网页地址，可以复制记下来以便之后需要用到
+{{</notice>}}
 
-**注意：此篇文章针对 Windows 环境编写，因此路径分隔符均为 `\`， 如果使用 macOS 或者 Linux 需要将路径分隔符替换为 "/"**
+### 本地环境配置以及本地网站
+
+{{<notice info>}}
+此篇文章针对 Windows 环境编写，因此路径分隔符均为 `\`， 如果使用 macOS 或者 Linux 需要将路径分隔符替换为 "/"
+{{</notice>}}
+
+* 根据 [Hugo 官方文档](https://gohugo.io/installation) 进行配置
+* 下载安装 Git, Go, Dart Sass 以及 Hugo Extended
+* 使用命令行进入到你克隆下来的仓库文件夹下，运行 `hugo server`，即可看到 Hugo 提示 `Web Server is available at <http://localhost:1313/> (bind address 127.0.0.1)`
+* 按住 Ctrl 点击链接即可在默认浏览器里打开网页
+* 网页会根据本地文件修改自动热重载，因此非常好用，强烈建议本地部署方便修改预览！
 
 ### 修改配置
 
-**注意：此处配置文件都使用 Stack 主题模板的 toml 文件，如果你不熟悉 toml 语法，可以通过 [toml 官方网站](https://toml.io/cn/v1.0.0) 学习，也可以使用 yaml 或者 json**
+{{<notice info>}}
+注意：此处配置文件都使用 Stack 主题模板的 toml 文件，如果你不熟悉 toml 语法，可以通过 [toml 官方网站](https://toml.io/cn/v1.0.0) 学习，也可以使用 yaml 或者 json
+{{</notice>}}
 
 #### 多语言配置
 
@@ -116,6 +130,17 @@ Hugo 有内置的多语言配置，而 Stack 主题也提供了[方法](https://
 
     将 src 修改为你的图片路径即可
 
+* 网站图标的修改是在 `static\favicon.png`，把这个图片替换成你想要的网站图标
+  * 如果你的图片类型不是 `.png` 或者你不想起名叫 `favicon.png`，找到 `params.toml` 中的
+
+    ```toml
+    favicon = "/favicon.png"
+    ```
+
+    将 favicon 修改为你的图片路径即可
+
+#### 侧边栏设置
+
 #### 分类与标签设置
 
 #### 创建文章模板
@@ -124,7 +149,7 @@ Hugo 有内置的多语言配置，而 Stack 主题也提供了[方法](https://
 
 * 在 `config.toml` 中, 可以添加一项 `timeZone = "Asia/Shanghai"`。这个设置的目的是让 Hugo 在构建你的网站的时候，会根据设定的时区来确定是否发布对应的文章。
 
-在默认情况下，Hugo 会使用构建时候的电脑时区来判断当前时间，但是有些情况下也会使用 UTC +0 的时区来进行判断。因此，如果你把你的网站内容推送到 Github 进行构建，当你已经是下一天的时候，可能 Hugo 获取的时间还是前一天，所以推送的文章并不会被发表。
+在默认情况下，Hugo 会使用构建时候的电脑时区来判断当前时间，但是有些情况下也会使用 UTC +0 的时区来进行判断。因此，如果你把你的网站内容推送到 Github 进行构建，当你的时间已经是下一天的时候，Hugo 获取的时间可能还是前一天，所以推送的文章并不会被发表。
 
 ### 添加评论系统
 
@@ -162,5 +187,21 @@ Hugo 有内置的多语言配置，而 Stack 主题也提供了[方法](https://
     这时就需要把复制的 script 中的信息分别填写进去。`lightTheme` 和 `darkTheme` 如果比较懒的话可以直接填写 `light` 和 `dark`
 
 ### 最后的推送与设置
+
+当以上设置都结束之后，可以将所有修改内容都重新推送到 GitHub 仓库里。如果在创建仓库的步骤里使用了模板或者复制了 `.github` 文件夹的话，此时 GitHub Action 应该会尝试部署网站。
+
+但是！还有最重要的一步没有做：
+默认的 GitHub workflow 的最后一个 step 是把所有生成出来的东西重新给推送到 `gh-pages` 这个分支上，因此我们需要多做一步。
+
+* 进入仓库的设置页面，选择 `Pages`
+* 在 `Build and deployment` 中，`Source` 选择 `Deploy from a branch`，Branch 选择 `gh-pages`，路径选择 `/(root)`
+* 点击 `Save`
+
+**以上，大功告成了！稍微等待一会再进入你的网页应该就能看到你的博客已经成功部署在 GitHub Pages 上了！**
+
+### 感谢名单
+
+* [CaiJimmy](https://github.com/CaiJimmy) 制作了 Hugo 的 Stack 主题
+* [十月的寒流](https://github.com/BYJRK) 的个人博客仓库在我尝试做自己的博客的时候提供了很多模板帮助
 
 **如果有任何关于文章的问题可以在底下评论区留言，但是因为本人并不精通这些，这篇文章只是分享经验，所以只能回答一些力所能及的问题**
