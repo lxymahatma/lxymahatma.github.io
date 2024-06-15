@@ -70,7 +70,7 @@ Hugo 的网站上有许多好看可用的[博客主题](https://themes.gohugo.io
 ## 本地环境配置以及本地网站
 
 {{<notice info>}}
-此篇文章针对 Windows 环境编写，因此路径分隔符均为 `\`， 如果使用 macOS 或者 Linux 需要将路径分隔符替换为 "/"
+此篇文章针对 Windows 环境编写，因此路径分隔符均为 `\`， 如果使用 macOS 或者 Linux 需要将路径分隔符替换为 `/`
 {{</notice>}}
 
 * 根据 [Hugo 官方文档](https://gohugo.io/installation) 进行配置
