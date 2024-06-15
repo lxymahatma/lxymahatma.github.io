@@ -92,7 +92,7 @@ Hugo 的网站上有许多好看可用的[博客主题](https://themes.gohugo.io
 * `baseurl`: 博客网页地址
 * `languageCode`: Hugo 用来填充内置 RSS 模板中的语言元素，一般来说写成和网页语言一致即可
 * `paginate`: 博客主页每一页可以显示多少篇文章
-* `title`: 这个就是博客的标题
+* `title`: 博客的标题
 * `defaultContentLanguage`: 默认网页语言（`zh-cn`）
 * `hasCJKLanguage`: 如果有使用中文（那肯定啊）就设置为 `true`
 * `disqusShortname`: 评论系统的设置，只有用 disqus 作为评论系统的需要设置
