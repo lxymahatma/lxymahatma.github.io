@@ -61,6 +61,7 @@ Hugo 的网站上有许多好看可用的[博客主题](https://themes.gohugo.io
 ### 简单版本（新手推荐！）
 
 * 打开仓库模板的页面，可以根据 ReadMe 的内容进行操作。
+* 如果想要本地构建网站，执行完第一步之后就可以了
 * 把创建好的仓库克隆到本地（可以使用命令行 `git clone` 或者直接使用 GitHub Desktop）
 
 {{<notice tip>}}
