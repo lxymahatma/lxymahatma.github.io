@@ -27,7 +27,7 @@ tags:
 
 首先，如果你不是一个前端开发人员，或者你不想重新造轮子，你可以在 Hugo 的官方网站上寻找你满意的主题。
 
-Hugo 的网站上有许多好看可用的[博客主题](https://themes.gohugo.io/tags/blog/)，我个人觉得比较可以的是以下四个（以 Star 数从多到少）：
+Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.io/tags/blog/)，我个人觉得比较可以的是以下四个（以 Star 数从多到少）：
 
 * [PaperMod](https://themes.gohugo.io/themes/hugo-papermod)
 * [Stack](https://themes.gohugo.io/themes/hugo-theme-stack)
@@ -42,7 +42,7 @@ Hugo 的网站上有许多好看可用的[博客主题](https://themes.gohugo.io
 
 一般来说会选择创建一个 `GitHub用户名.github.io` 名称的仓库作为个人博客的地址。例: `lxymahatma.github.io`
 
-许多 Hugo 主题（比如 Stack）提供了一个[仓库模板](https://github.com/CaiJimmy/hugo-theme-stack-starter)专门用来创建新的仓库，这里分成两种情况进行讨论
+许多 Hugo 主题（比如 Stack）提供了一个 [仓库模板](https://github.com/CaiJimmy/hugo-theme-stack-starter) 专门用来创建新的仓库，这里分成两种情况进行讨论
 
 ### 传统方式（无 generated from template 显示）
 
@@ -126,7 +126,7 @@ Hugo 的网站上有许多好看可用的[博客主题](https://themes.gohugo.io
 
 首先你需要决定你的个人博客是否需要多语言支持，如果不需要，你可以直接跳到下一小节。
 
-Hugo 有内置的多语言配置，而 Stack 主题也提供了[方法](https://stack.jimmycai.com/config/i18n)，此教程根据 Hugo 官方内置配置模板进行教学。
+Hugo 有内置的多语言配置，而 Stack 主题也提供了 [方法](https://stack.jimmycai.com/config/i18n)，此教程根据 Hugo 官方内置配置模板进行教学。
 
 * 进入 `config\_default` 文件夹，找到并重命名 `_languages.toml` 为 `languages.toml`，打开文件
 * 接着，根据 [Hugo 官方文档](https://gohugo.io/content-management/multilingual) 进行配置
