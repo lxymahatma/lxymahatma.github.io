@@ -2,7 +2,6 @@
 title: "如何快速创建一个博客"
 description: 从零开始的 GitHub Page + Hugo 简易博客打造教程
 slug: "how-to-build-blog"
-draft: true
 date: 2024-06-15
 categories:
     - Tutorial
@@ -171,17 +170,61 @@ Hugo 有内置的多语言配置，而 Stack 主题也提供了[方法](https://
 
     将 favicon 修改为你的图片路径即可
 
-## 侧边栏设置
+* 其他任意图片，如果是使用在 `icon` 属性里，那么都是将图片放入到 `assets\icons` 里即可
+
+## 左侧边栏设置
+
+{{<notice info>}}
+此小节内，`content` 文件夹代指你设置的对应 `contentDir` 文件夹（如果没有设置多语言那么就是 `content` 文件夹）
+{{</notice>}}
+
+如果你已经成功克隆了仓库，那么你的 `content` 文件夹底下已经有几个例子了，因此只是简单解释一下已有的例子并且赘述一下如何创建更多的栏目
+
+### 例子解释
+
+在 `content` 文件夹下有名为 `_index.md` 的文件：
+
+{{<notice example>}}
+
+```yaml
+---
+menu:
+    main:
+        name: 主页
+        weight: 1
+        params:
+            icon: home
+---
+```
+
+{{</notice>}}
+
+其中，`weight` 设置为 1 表示将这个按钮放到左侧边栏最上方，`icon` 设置为 `home` 就可以使用默认的主页图标
+
+在 `content\page` 文件夹下有 `archives` 和 `search` 的文件夹，里面分别带有 `index.md`，
+和主页的 `_index.md` 的唯一区别就是多了一项 `layout` 设置，里面不同名称的 `layout` 是默认实现的功能
+
+### 创建新栏目
+
+在 `content\page` 文件夹下创建一个新的文件夹，起名为你想要的按钮名字
+
+{{<notice warning>}}
+不要重命名 `page` 文件夹！
+
+如果文件夹名字不为 `page`，可能会造成有些功能无法使用（搜索）
+{{</notice>}}
+
+在新的文件夹内添加 `index.md` 文件，根据 home 的模板修改即可
 
 ## 分类与标签设置
 
 {{<notice info>}}
-此小节内，`Content` 文件夹代指你设置的对应 `contentDir` 文件夹（如果没有设置多语言那么就是 `content` 文件夹）
+此小节内，`content` 文件夹代指你设置的对应 `contentDir` 文件夹（如果没有设置多语言那么就是 `content` 文件夹）
 {{</notice>}}
 
 ### 分类
 
-* 在 `Content` 文件夹下创建一个名为 `categories` 的文件夹，在里面创建一个新的文件夹，起名为你想要的分类名
+* 在 `content` 文件夹下创建一个名为 `categories` 的文件夹，在里面创建一个新的文件夹，起名为你想要的分类名
 * 在新文件夹里创建一个名为 `_index.md` 的 Markdown 文件，根据以下模板进行修改即可
 
 {{<notice example>}}
@@ -211,7 +254,7 @@ style:
 
 ### 标签
 
-* 在 `Content` 文件夹下创建一个名为 `tags` 的文件夹，在里面创建一个新的文件夹，起名为你想要的标签名
+* 在 `content` 文件夹下创建一个名为 `tags` 的文件夹，在里面创建一个新的文件夹，起名为你想要的标签名
 * 在新文件夹里创建一个名为 `_index.md` 的 Markdown 文件，根据以下模板进行修改即可
 
 {{<notice example>}}
