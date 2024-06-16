@@ -76,14 +76,15 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 
 * 根据 [Hugo 官方文档](https://gohugo.io/installation) 进行配置
 * 下载安装 Git, Go, Dart Sass 以及 Hugo Extended
-* 使用命令行进入到你克隆下来的仓库文件夹下，运行 `hugo server`，即可看到 Hugo 提示 `Web Server is available at <http://localhost:1313/> (bind address 127.0.0.1)`
+* 使用命令行进入到你克隆下来的仓库文件夹下，运行 `hugo server`，即可看到 Hugo 提示
+`Web Server is available at <http://localhost:1313/> (bind address 127.0.0.1)`
 * 按住 Ctrl 点击链接即可在默认浏览器里打开网页
 * 网页会根据本地文件修改自动热重载，因此非常好用，强烈建议本地部署方便修改预览！
 
 ## 修改配置
 
 {{<notice info>}}
-注意：此处配置文件都使用 Stack 主题模板的 toml 文件，如果你不熟悉 toml 语法，可以通过 [toml 官方网站](https://toml.io/cn/v1.0.0) 学习，也可以使用 yaml 或者 json
+注意：此处配置文件都使用 Stack 主题模板的 toml 文件，如果你不熟悉 toml 语法，可以通过 [toml 官方网站](https://toml.io/cn/v1.0.0) 学习, 也可以使用 yaml 或者 json
 {{</notice>}}
 
 ### 基础配置
@@ -100,7 +101,7 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 
 #### `menu.toml`
 
-这个文件是用来设置你的左侧侧边栏的，但是根据 [Stack 文档的建议](https://stack.jimmycai.com/config/menu)，最好不要通过这个文件来设置，而是通过 [此方法](#侧边栏设置) 来进行设置。
+这个文件是用来设置你的左侧侧边栏的，但是根据 [Stack 文档的建议](https://stack.jimmycai.com/config/menu)，最好不要通过这个文件来设置，而是通过 [此方法](#左侧边栏设置) 来进行设置。
 因此此项里只讲述如何设置侧边栏上的图标
 
 * `[[social]]` 代表了一个 `social` 数组，参考原模板进行修改即可
