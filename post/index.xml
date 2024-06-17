@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on lxymahatma的博客</title><link>https://lxymahatma.github.io/post/</link><description>Recent content in Posts on lxymahatma的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 15 Jun 2024 00:00:00 +0900</lastBuildDate><atom:link href="https://lxymahatma.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>介绍</title><link>https://lxymahatma.github.io/p/introduction/</link><pubDate>Sat, 15 Jun 2024 00:00:00 +0900</pubDate><guid>https://lxymahatma.github.io/p/introduction/</guid><description>&lt;p>此博客是无聊的时候的产物，也就是随便发发乱七八糟的东西了&lt;/p>
+&lt;p>计划是在这里发点无聊时候摸索的有趣的东西，大多数情况下可能和C#有关吧，但是也有可能是各种各样的&lt;/p>
+&lt;p>总之某种程度上可以敬请期待吧.jpg&lt;/p></description></item><item><title>如何快速创建一个博客</title><link>https://lxymahatma.github.io/p/how-to-build-blog/</link><pubDate>Sat, 15 Jun 2024 00:00:00 +0900</pubDate><guid>https://lxymahatma.github.io/p/how-to-build-blog/</guid><description>&lt;p>最近心血来潮有点没事干（不是作业太少）所以寻思着要么弄个个人博客写写东西，这样好歹看起来还挺牛的样子（不是），也就因此有了这个博客。&lt;/p>
+&lt;p>弄完基础的博客内容之后又开始想说发啥好呢，想来想去感觉诶不如直接把我弄这个个人博客的过程写一个教程，又是总结一下自己这几天干了啥又可以造福别人这何尝不是一件美事呢.jpg&lt;/p>
+&lt;p>话不多说以下开始正题：&lt;/p>
+&lt;h2 id="前提条件">前提条件
+&lt;/h2>&lt;ul>
+&lt;li>一个 &lt;a class="link" href="https://github.com" target="_blank" rel="noopener"
+>GitHub&lt;/a> 账户&lt;/li>
+&lt;li>一台电脑 （因为我个人比较推荐本地跑一下网站 Demo 而不是在线编辑）&lt;/li>
+&lt;li>能阅读英文（或者会使用翻译软件）&lt;/li>
+&lt;li>电脑基础知识（会使用命令行，了解基础 GitHub 操作）&lt;/li>
+&lt;/ul>
+&lt;h2 id="开始">开始
+&lt;/h2>&lt;p>首先，如果你不是一个前端开发人员，或者你不想重新造轮子，你可以在 Hugo 的官方网站上寻找你满意的主题。&lt;/p>
+&lt;p>Hugo 的网站上有许多好看可用的 &lt;a class="link" href="https://themes.gohugo.io/tags/blog/" target="_blank" rel="noopener"
+>博客主题&lt;/a>，我个人觉得比较可以的是以下四个（以 Star 数从多到少）：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-papermod" target="_blank" rel="noopener"
+>PaperMod&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-theme-stack" target="_blank" rel="noopener"
+>Stack&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-paper" target="_blank" rel="noopener"
+>Paper&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-theme-tailwind" target="_blank" rel="noopener"
+>TailWind&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>此博客使用 Stack 主题构建，因此以下主要以 Stack 主题的项目文件结构来进行讲解&lt;/p>
+&lt;h2 id="创建仓库">创建仓库
+&lt;/h2>&lt;p>因为需要使用 GitHub Page 来部署博客，所以我们需要先创建一个 GitHub 仓库。&lt;/p>
+&lt;p>一般来说会选择创建一个 &lt;code>GitHub用户名.github.io&lt;/code> 名称的仓库作为个人博客的地址。例: &lt;code>lxymahatma.github.io&lt;/code>&lt;/p>
+&lt;p>许多 Hugo 主题（比如 Stack）提供了一个 &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack-starter" target="_blank" rel="noopener"
+>仓库模板&lt;/a> 专门用来创建新的仓库，这里分成两种情况进行讨论&lt;/p>
+&lt;h3 id="传统方式无-generated-from-template-显示">传统方式（无 generated from template 显示）
+&lt;/h3>&lt;ul>
+&lt;li>直接通过 GitHub 网页端创建一个新的仓库&lt;/li>
+&lt;li>把创建好的仓库以及仓库模板克隆到本地（可以使用命令行 &lt;code>git clone&lt;/code> 或者直接使用 GitHub Desktop）&lt;/li>
+&lt;li>把你需要的内容从仓库模板里复制到你的仓库里，一般来说为以下几个：
+&lt;ul>
+&lt;li>.github&lt;/li>
+&lt;li>assets&lt;/li>
+&lt;li>config&lt;/li>
+&lt;li>content&lt;/li>
+&lt;li>static&lt;/li>
+&lt;li>.gitignore&lt;/li>
+&lt;li>go.mod&lt;/li>
+&lt;li>go.sum&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="简单版本新手推荐">简单版本（新手推荐！）
+&lt;/h3>&lt;ul>
+&lt;li>打开仓库模板的页面，可以根据 ReadMe 的内容进行操作。&lt;/li>
+&lt;li>如果想要本地构建网站，执行完第一步之后就可以了。&lt;/li>
+&lt;li>如果想要使用 Github Codespace （网页编辑，新手推荐！因为配环境是个相对麻烦的事情）就可以按照 ReadMe 内容继续，并且可以跳过 &lt;a class="link" href="#%e6%9c%ac%e5%9c%b0%e7%8e%af%e5%a2%83%e9%85%8d%e7%bd%ae%e4%bb%a5%e5%8f%8a%e6%9c%ac%e5%9c%b0%e7%bd%91%e7%ab%99" >本地环境配置&lt;/a> 这一小节&lt;/li>
+&lt;li>如果想要本地部署网站，需要把创建好的仓库克隆到本地（可以使用命令行 &lt;code>git clone&lt;/code> 或者直接使用 GitHub Desktop）&lt;/li>
+&lt;/ul>
+&lt;div class="notice tip">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-lightbulb" aria-hidden="true">&lt;/i>Tip
+&lt;/div>
+&lt;div class="notice-content">进入仓库的设置页面后点击 &lt;code>Pages&lt;/code> 即可看到你的博客网页地址，可以复制记下来以便之后需要用到&lt;/div>
+&lt;/div>
+&lt;h2 id="本地环境配置以及本地网站">本地环境配置以及本地网站
+&lt;/h2>&lt;div class="notice info">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-exclamation-circle" aria-hidden="true">&lt;/i>Info
+&lt;/div>
+&lt;div class="notice-content">&lt;p>此篇文章针对 Windows 环境编写，因此路径分隔符均为 &lt;code>\&lt;/code>， 如果使用 macOS 或者 Linux 需要将路径分隔符替换为 &lt;code>/&lt;/code>&lt;/p>
+&lt;p>本地配置部分对于计算机基础要求相对较高一点，因此以下内容默认你能够阅读 Hugo 英文文档，并且有了解过下载各种语言环境/配置环境变量等信息&lt;/p>&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>根据 &lt;a class="link" href="https://gohugo.io/installation" target="_blank" rel="noopener"
+>Hugo 官方文档&lt;/a> 进行配置&lt;/li>
+&lt;li>下载安装 Git, Go, Dart Sass 以及 Hugo Extended&lt;/li>
+&lt;li>使用命令行进入到你克隆下来的仓库文件夹下，运行 &lt;code>hugo server&lt;/code>，即可看到 Hugo 提示
+&lt;code>Web Server is available at &amp;lt;http://localhost:1313/&amp;gt; (bind address 127.0.0.1)&lt;/code>&lt;/li>
+&lt;li>按住 Ctrl 点击链接即可在默认浏览器里打开网页&lt;/li>
+&lt;li>网页会根据本地文件修改自动热重载，因此非常好用，强烈建议本地部署方便修改预览！&lt;/li>
+&lt;/ul>
+&lt;h2 id="修改配置">修改配置
+&lt;/h2>&lt;div class="notice info">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-exclamation-circle" aria-hidden="true">&lt;/i>Info
+&lt;/div>
+&lt;div class="notice-content">注意：此处配置文件都使用 Stack 主题模板的 toml 文件，如果你不熟悉 toml 语法，可以通过 &lt;a class="link" href="https://toml.io/cn/v1.0.0" target="_blank" rel="noopener"
+>toml 官方网站&lt;/a> 学习, 也可以使用 yaml 或者 json&lt;/div>
+&lt;/div>
+&lt;h3 id="基础配置">基础配置
+&lt;/h3>&lt;h4 id="configtoml">&lt;code>config.toml&lt;/code>
+&lt;/h4>&lt;ul>
+&lt;li>&lt;code>baseurl&lt;/code>: 博客网页地址&lt;/li>
+&lt;li>&lt;code>languageCode&lt;/code>: Hugo 用来填充内置 RSS 模板中的语言元素，一般来说写成和网页语言一致即可&lt;/li>
+&lt;li>&lt;code>paginate&lt;/code>: 博客主页每一页可以显示多少篇文章&lt;/li>
+&lt;li>&lt;code>title&lt;/code>: 博客的标题&lt;/li>
+&lt;li>&lt;code>defaultContentLanguage&lt;/code>: 默认网页语言（&lt;code>zh-cn&lt;/code>）&lt;/li>
+&lt;li>&lt;code>hasCJKLanguage&lt;/code>: 如果有使用中文（那肯定啊）就设置为 &lt;code>true&lt;/code>&lt;/li>
+&lt;li>&lt;code>disqusShortname&lt;/code>: 评论系统的设置，只有用 disqus 作为评论系统的需要设置&lt;/li>
+&lt;/ul>
+&lt;h4 id="menutoml">&lt;code>menu.toml&lt;/code>
+&lt;/h4>&lt;p>这个文件是用来设置你的左侧侧边栏的，但是根据 &lt;a class="link" href="https://stack.jimmycai.com/config/menu" target="_blank" rel="noopener"
+>Stack 文档的建议&lt;/a>，最好不要通过这个文件来设置，而是通过 &lt;a class="link" href="#%e5%b7%a6%e4%be%a7%e8%be%b9%e6%a0%8f%e8%ae%be%e7%bd%ae" >此方法&lt;/a> 来进行设置。
+因此此项里只讲述如何设置侧边栏上的图标&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>[[social]]&lt;/code> 代表了一个 &lt;code>social&lt;/code> 数组，参考原模板进行修改即可&lt;/li>
+&lt;li>&lt;code>identifier&lt;/code>: 内部识别使用的标识符，需要唯一&lt;/li>
+&lt;li>&lt;code>name&lt;/code>: 用户把鼠标悬浮在按钮上后显示出的字&lt;/li>
+&lt;li>&lt;code>url&lt;/code>: 用户点击按钮后跳转的链接&lt;/li>
+&lt;li>&lt;code>params.icon&lt;/code>: 按钮图标&lt;/li>
+&lt;/ul>
+&lt;div class="notice note">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-sticky-note" aria-hidden="true">&lt;/i>Note
+&lt;/div>
+&lt;div class="notice-content">如果你想要的图标并没有内置，Hugo 会提醒你需要添加对应图片。
+可参考 &lt;a class="link" href="https://stack.jimmycai.com/config/menu#add-custom-icon" target="_blank" rel="noopener"
+>Stack 文档&lt;/a>，将图片添加到 &lt;code>assets\icons&lt;/code> 下即可。&lt;/div>
+&lt;/div>
+&lt;h4 id="paramstoml">&lt;code>params.toml&lt;/code>
+&lt;/h4>&lt;p>因为里面可以设置的东西实在太多，有些内容会在之后提到，因此只讲一些比较重要的内容：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>mainSections&lt;/code>: 放在此文件夹底下的文章会被发布到网站上&lt;/li>
+&lt;li>&lt;code>footer.since&lt;/code>: 页脚，这个网站是从哪一年开始的&lt;/li>
+&lt;li>&lt;code>widgets&lt;/code>: 电脑端的主页右侧部分内容，具体设置可以参考 &lt;a class="link" href="https://stack.jimmycai.com/config/widgets" target="_blank" rel="noopener"
+>Stack 文档&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="多语言配置">多语言配置
+&lt;/h3>&lt;p>首先你需要决定你的个人博客是否需要多语言支持，如果不需要，你可以直接跳到下一小节。&lt;/p>
+&lt;p>Hugo 有内置的多语言配置，而 Stack 主题也提供了 &lt;a class="link" href="https://stack.jimmycai.com/config/i18n" target="_blank" rel="noopener"
+>方法&lt;/a>，此教程根据 Hugo 官方内置配置模板进行教学。&lt;/p>
+&lt;ul>
+&lt;li>进入 &lt;code>config\_default&lt;/code> 文件夹，找到并重命名 &lt;code>_languages.toml&lt;/code> 为 &lt;code>languages.toml&lt;/code>，打开文件&lt;/li>
+&lt;li>接着，根据 &lt;a class="link" href="https://gohugo.io/content-management/multilingual" target="_blank" rel="noopener"
+>Hugo 官方文档&lt;/a> 进行配置
+&lt;ul>
+&lt;li>因为文件名已经为 &lt;code>languages.toml&lt;/code>，因此并不需要写成 &lt;code>[languages.en]&lt;/code> 的形式，只要和已有的一样写成 &lt;code>[en]&lt;/code>就行&lt;/li>
+&lt;li>可以参考 &lt;a class="link" href="https://github.com/lxymahatma/lxymahatma.github.io/blob/main/config/_default/languages.toml" target="_blank" rel="noopener"
+>我的配置&lt;/a> 进行修改&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>下面简单讲解一下我的配置中各项代表了什么&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>languageName&lt;/code>: 切换语言的下拉框中的语言名字显示&lt;/li>
+&lt;li>&lt;code>languageDirection&lt;/code>: 语言阅读方向（从左往右）&lt;/li>
+&lt;li>&lt;code>contentDir&lt;/code>: 博客内容的文件夹（可以对于不同语言设置发布内容不同）&lt;/li>
+&lt;li>&lt;code>title&lt;/code>: 博客的标题&lt;/li>
+&lt;li>&lt;code>weight&lt;/code>: 下拉框中的排序权重，越高越在底下&lt;/li>
+&lt;/ul>
+&lt;p>而 &lt;code>[params]&lt;/code> 是在 &lt;code>params.toml&lt;/code> 中的配置&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>sidebar.subtitle&lt;/code>: 博客的副标题&lt;/li>
+&lt;li>&lt;code>article.license.default&lt;/code>: 文章底部的协议&lt;/li>
+&lt;/ul>
+&lt;p>我把 &lt;code>params.toml&lt;/code> 里的这两个配置给删除并且设置了多语言，如果不需要的话也可以不修改&lt;/p>
+&lt;h2 id="图片修改">图片修改
+&lt;/h2>&lt;ul>
+&lt;li>
+&lt;p>头像的修改是在 &lt;code>assets\img\avatar.png&lt;/code>，把这个图片替换成你想要的头像就行&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如果你的图片类型不是 &lt;code>.png&lt;/code> 或者你不想起名叫 &lt;code>avatar.png&lt;/code>，找到 &lt;code>params.toml&lt;/code> 中的&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="nx">sidebar&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">avatar&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">enabled&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">local&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">src&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;img/avatar.png&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>将 src 修改为你的图片路径即可&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>网站图标的修改是在 &lt;code>static\favicon.png&lt;/code>，把这个图片替换成你想要的网站图标&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>如果你的图片类型不是 &lt;code>.png&lt;/code> 或者你不想起名叫 &lt;code>favicon.png&lt;/code>，找到 &lt;code>params.toml&lt;/code> 中的&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">favicon&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;/favicon.png&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>将 favicon 修改为你的图片路径即可&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>其他任意图片，如果是使用在 &lt;code>icon&lt;/code> 属性里，那么都是将图片放入到 &lt;code>assets\icons&lt;/code> 里即可&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;div class="notice tip">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-lightbulb" aria-hidden="true">&lt;/i>Tip
+&lt;/div>
+&lt;div class="notice-content">Stack 主题有内置部分 icon 的 svg 文件可以直接通过文件名进行访问，比如 &lt;code>brand-github&lt;/code>, &lt;code>user&lt;/code> 等。
+具体信息可以查看 &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack/tree/master/assets/icons" target="_blank" rel="noopener"
+>这里&lt;/a>&lt;/div>
+&lt;/div>
+&lt;h2 id="左侧边栏设置">左侧边栏设置
+&lt;/h2>&lt;div class="notice info">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-exclamation-circle" aria-hidden="true">&lt;/i>Info
+&lt;/div>
+&lt;div class="notice-content">此小节内，&lt;code>content&lt;/code> 文件夹代指你设置的对应 &lt;code>contentDir&lt;/code> 文件夹（如果没有设置多语言那么就是 &lt;code>content&lt;/code> 文件夹）&lt;/div>
+&lt;/div>
+&lt;p>如果你已经成功克隆了仓库，那么你的 &lt;code>content&lt;/code> 文件夹底下已经有几个例子了，因此只是简单解释一下已有的例子并且赘述一下如何创建更多的栏目&lt;/p>
+&lt;h3 id="例子解释">例子解释
+&lt;/h3>&lt;p>在 &lt;code>content&lt;/code> 文件夹下有名为 &lt;code>_index.md&lt;/code> 的文件：&lt;/p>
+&lt;div class="notice example">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-file-text" aria-hidden="true">&lt;/i>Example
+&lt;/div>
+&lt;div class="notice-content">&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">menu&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">main&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">主页&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">weight&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">1&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">params&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">icon&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">home&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/div>
+&lt;/div>
+&lt;p>其中，&lt;code>weight&lt;/code> 设置为 1 表示将这个按钮放到左侧边栏最上方，&lt;code>icon&lt;/code> 设置为 &lt;code>home&lt;/code> 就可以使用默认的主页图标&lt;/p>
+&lt;p>在 &lt;code>content\page&lt;/code> 文件夹下有 &lt;code>archives&lt;/code> 和 &lt;code>search&lt;/code> 的文件夹，里面分别带有 &lt;code>index.md&lt;/code>，
+和主页的 &lt;code>_index.md&lt;/code> 的唯一区别就是多了一项 &lt;code>layout&lt;/code> 设置，里面不同名称的 &lt;code>layout&lt;/code> 是默认实现的功能&lt;/p>
+&lt;h3 id="创建新栏目">创建新栏目
+&lt;/h3>&lt;p>在 &lt;code>content\page&lt;/code> 文件夹下创建一个新的文件夹，起名为你想要的按钮名字&lt;/p>
+&lt;div class="notice warning">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-exclamation-triangle" aria-hidden="true">&lt;/i>Warning
+&lt;/div>
+&lt;div class="notice-content">&lt;p>不要重命名 &lt;code>page&lt;/code> 文件夹！&lt;/p>
+&lt;p>如果文件夹名字不为 &lt;code>page&lt;/code>，可能会造成有些功能无法使用（搜索）&lt;/p>&lt;/div>
+&lt;/div>
+&lt;p>在新的文件夹内添加 &lt;code>index.md&lt;/code> 文件，根据 home 的模板修改即可&lt;/p>
+&lt;h2 id="分类与标签设置">分类与标签设置
+&lt;/h2>&lt;div class="notice info">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-exclamation-circle" aria-hidden="true">&lt;/i>Info
+&lt;/div>
+&lt;div class="notice-content">此小节内，&lt;code>content&lt;/code> 文件夹代指你设置的对应 &lt;code>contentDir&lt;/code> 文件夹（如果没有设置多语言那么就是 &lt;code>content&lt;/code> 文件夹）&lt;/div>
+&lt;/div>
+&lt;h3 id="分类">分类
+&lt;/h3>&lt;ul>
+&lt;li>在 &lt;code>content&lt;/code> 文件夹下创建一个名为 &lt;code>categories&lt;/code> 的文件夹，在里面创建一个新的文件夹，起名为你想要的分类名&lt;/li>
+&lt;li>在新文件夹里创建一个名为 &lt;code>_index.md&lt;/code> 的 Markdown 文件，根据以下模板进行修改即可&lt;/li>
+&lt;/ul>
+&lt;div class="notice example">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-file-text" aria-hidden="true">&lt;/i>Example
+&lt;/div>
+&lt;div class="notice-content">&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Example Category&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">A description of this category&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">style&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">background&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;#2a9d8f&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">color&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;#fff&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/div>
+&lt;/div>
+&lt;p>参数含义：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>title&lt;/code>: 分类的名称，在主页中通过点击文章的分类标签会进入到具体的分类页面&lt;/li>
+&lt;li>&lt;code>description&lt;/code>: 分类的描述，在具体分类页面显示&lt;/li>
+&lt;li>&lt;code>image&lt;/code>: 分类的封面图片，在具体分类页面显示&lt;/li>
+&lt;li>&lt;code>style&lt;/code>: 设置文章在主页里显示的时候，分类勋章的颜色。
+&lt;ul>
+&lt;li>&lt;code>background&lt;/code>: 背景色&lt;/li>
+&lt;li>&lt;code>color&lt;/code>: 文字颜色。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="标签">标签
+&lt;/h3>&lt;ul>
+&lt;li>在 &lt;code>content&lt;/code> 文件夹下创建一个名为 &lt;code>tags&lt;/code> 的文件夹，在里面创建一个新的文件夹，起名为你想要的标签名&lt;/li>
+&lt;li>在新文件夹里创建一个名为 &lt;code>_index.md&lt;/code> 的 Markdown 文件，根据以下模板进行修改即可&lt;/li>
+&lt;/ul>
+&lt;div class="notice example">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-file-text" aria-hidden="true">&lt;/i>Example
+&lt;/div>
+&lt;div class="notice-content">&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Example Category&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">A description of this category&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="notice note">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-sticky-note" aria-hidden="true">&lt;/i>Note
+&lt;/div>
+&lt;div class="notice-content">&lt;p>标签和分类唯一的区别就是不能自定义勋章的颜色。&lt;/p>
+&lt;p>但同时，通过 &lt;code>widgets&lt;/code> 设置的右侧栏目并不会显示分类的自定义颜色&lt;/p>&lt;/div>
+&lt;/div>
+&lt;h2 id="创建文章模板">创建文章模板
+&lt;/h2>&lt;p>根据 &lt;a class="link" href="https://gohugo.io/content-management/archetypes" target="_blank" rel="noopener"
+>Hugo 官方文档&lt;/a>，有两种模板创建方式：&lt;/p>
+&lt;ol>
+&lt;li>单 Markdown 文件形式&lt;/li>
+&lt;li>文件夹形式&lt;/li>
+&lt;/ol>
+&lt;p>两种方法都需要在根目录底下创建一个名为 &lt;code>archetypes&lt;/code> 的新文件夹&lt;/p>
+&lt;h3 id="单-markdown-文件形式不推荐">单 Markdown 文件形式（不推荐）
+&lt;/h3>&lt;ul>
+&lt;li>在 &lt;code>archetypes&lt;/code> 文件夹底下创建一个名为 &lt;code>default.md&lt;/code> 的 Markdown 文件，里面的内容参考以下模板（官方）：&lt;/li>
+&lt;/ul>
+&lt;div class="notice example">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-file-text" aria-hidden="true">&lt;/i>Example
+&lt;/div>
+&lt;div class="notice-content">&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">date&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;{{ .Date }}&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">draft&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;{{ replace .File.ContentBaseName `-` ` ` | title }}&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>&lt;code>date&lt;/code>: 文章创建日期&lt;/li>
+&lt;li>&lt;code>draft&lt;/code>: 文章是否是草稿，如果是草稿则不会发布到网站上&lt;/li>
+&lt;li>&lt;code>title&lt;/code>: 这一串东西是把文件名中的 &lt;code>-&lt;/code> 给替换成空格，赋值给 &lt;code>title&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>设置完之后，就可以通过 &lt;code>hugo new content post/my-first-post.md&lt;/code> 在 post 文件夹下创建一个新的文件。但是因为前面设置，只有在文件夹里的文章会被正确加载，还需要再套一层文件夹才能正常使用。&lt;/p>
+&lt;h3 id="文件夹形式-推荐">文件夹形式 （推荐）
+&lt;/h3>&lt;ul>
+&lt;li>在 &lt;code>archetypes&lt;/code> 文件夹底下创建一个名为 &lt;code>post&lt;/code> 的文件夹，里面添加一个名为 &lt;code>index.md&lt;/code> 的 Markdown 文件。
+下面是我的模板：&lt;/li>
+&lt;/ul>
+&lt;div class="notice example">
+&lt;div class="notice-title">
+&lt;i class="fa-solid fa-file-text" aria-hidden="true">&lt;/i>Example
+&lt;/div>
+&lt;div class="notice-content">&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;{{ replace .File.ContentBaseName &amp;#34;&lt;/span>-&lt;span class="s2">&amp;#34; &amp;#34;&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34; | humanize | title }}&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">slug&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s2">&amp;#34;{{ .Name }}&amp;#34;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">date&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>{{&lt;span class="w"> &lt;/span>&lt;span class="l">.Date | time.Format &amp;#34;2006-01-02&amp;#34;}}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">categories&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">Category&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">tags&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">Tag1&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">Tag2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">Tag3&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nn">---&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/div>
+&lt;/div>
+&lt;ul>
+&lt;li>&lt;code>title&lt;/code>: 使用了 humanize 函数让标题更加可读&lt;/li>
+&lt;li>&lt;code>description&lt;/code>: 文章内容概述&lt;/li>
+&lt;li>&lt;code>slug&lt;/code>: 文章的辨识符&lt;/li>
+&lt;li>&lt;code>date&lt;/code>: 文章创建日期，但是只包含年月日&lt;/li>
+&lt;li>&lt;code>categories&lt;/code>: 文章的分类&lt;/li>
+&lt;li>&lt;code>tags&lt;/code>: 文章的标签&lt;/li>
+&lt;/ul>
+&lt;p>设置完之后，就可以通过 &lt;code>hugo new content post/my-first-post&lt;/code> 在 post 文件夹下创建一个新的文件夹，将你想要的文章内容写入 &lt;code>index.md&lt;/code> 即可。&lt;/p>
+&lt;h2 id="小细节踩坑">小细节（踩坑）
+&lt;/h2>&lt;ul>
+&lt;li>在 &lt;code>config.toml&lt;/code> 中, 可以添加一项 &lt;code>timeZone = &amp;quot;Asia/Shanghai&amp;quot;&lt;/code>。这个设置的目的是让 Hugo 在构建你的网站的时候，会根据设定的时区来确定是否发布对应的文章。&lt;/li>
+&lt;/ul>
+&lt;p>在默认情况下，Hugo 会使用构建时候的电脑时区来判断当前时间，但是有些情况下也会使用 UTC +0 的时区来进行判断。因此，如果你把你的网站内容推送到 Github 进行构建，当你的时间已经是下一天的时候，Hugo 获取的时间可能还是前一天，所以推送的文章并不会被发表。&lt;/p>
+&lt;h2 id="添加评论系统">添加评论系统
+&lt;/h2>&lt;p>最后一步就是给博客添加评论系统，此博客选择的是 &lt;a class="link" href="https://lxymahatma.github.io/" target="_blank" rel="noopener"
+>giscus&lt;/a>。
+对于 giscus 的基础设置就不再过多赘述，讲一下如何设置到个人博客里：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>把 giscus 的 &lt;code>启用 giscus&lt;/code> 中的 script 给复制下来&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>删除 &lt;code>config.toml&lt;/code> 中的 &lt;code>disqusShortname = &amp;quot;hugo-theme-stack&amp;quot;&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在 &lt;code>params.toml&lt;/code> 中，可以看到有&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="c">## Comments&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="nx">comments&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">enabled&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="kc">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">provider&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;disqus&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>将 &lt;code>provider&lt;/code> 设置为 &lt;code>&amp;quot;giscus&amp;quot;&lt;/code>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>再往下滑能看到&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-toml" data-lang="toml">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="nx">comments&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">giscus&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">repo&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">repoID&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">category&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">categoryID&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">mapping&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">lightTheme&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">darkTheme&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">reactionsEnabled&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">emitMetadata&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这时就需要把复制的 script 中的信息分别填写进去。&lt;code>lightTheme&lt;/code> 和 &lt;code>darkTheme&lt;/code> 如果比较懒的话可以直接填写 &lt;code>light&lt;/code> 和 &lt;code>dark&lt;/code>&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="最后的推送与设置">最后的推送与设置
+&lt;/h2>&lt;p>当以上设置都结束之后，可以将所有修改内容都重新推送到 GitHub 仓库里。如果在创建仓库的步骤里使用了模板或者复制了 &lt;code>.github&lt;/code> 文件夹的话，此时 GitHub Action 应该会尝试部署网站。&lt;/p>
+&lt;p>但是！还有最重要的一步没有做：
+默认的 GitHub workflow 的最后一个 step 是把所有生成出来的东西重新给推送到 &lt;code>gh-pages&lt;/code> 这个分支上，因此我们需要多做一步。&lt;/p>
+&lt;ul>
+&lt;li>进入仓库的设置页面，选择 &lt;code>Pages&lt;/code>&lt;/li>
+&lt;li>在 &lt;code>Build and deployment&lt;/code> 中，&lt;code>Source&lt;/code> 选择 &lt;code>Deploy from a branch&lt;/code>，Branch 选择 &lt;code>gh-pages&lt;/code>，路径选择 &lt;code>/(root)&lt;/code>&lt;/li>
+&lt;li>点击 &lt;code>Save&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>以上，大功告成了！稍微等待一会再进入你的网页应该就能看到你的博客已经成功部署在 GitHub Pages 上了！&lt;/strong>&lt;/p>
+&lt;h2 id="感谢名单">感谢名单
+&lt;/h2>&lt;ul>
+&lt;li>&lt;a class="link" href="https://github.com/CaiJimmy" target="_blank" rel="noopener"
+>CaiJimmy&lt;/a> 制作了 Hugo 的 Stack 主题&lt;/li>
+&lt;li>&lt;a class="link" href="https://github.com/BYJRK" target="_blank" rel="noopener"
+>十月的寒流&lt;/a> 的个人博客仓库在我尝试做自己的博客的时候提供了很多模板帮助&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>感谢你看到这里，如果有任何关于文章的问题可以在底下评论区留言，但是因为本人并不精通这些，这篇文章只是分享经验，所以只能回答一些力所能及的问题&lt;/strong>&lt;/p>
+&lt;p>&lt;del>记得看完发个表情或者发个评论（不是）&lt;/del>&lt;/p></description></item></channel></rss>
