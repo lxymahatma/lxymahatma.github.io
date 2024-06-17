@@ -1,6 +1,6 @@
 ---
 title: "介绍"
-description: 欢迎来到 lxy 的摸鱼博客 🤔
+description: "欢迎来到 lxy 的摸鱼博客 🤔"
 slug: "introduction"
 date: 2024-06-15
 tags:

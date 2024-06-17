@@ -6,7 +6,7 @@ title = "lxymahatma's blog"
 weight = 2
 
 [en.params]
-sidebar.subtitle = "Posting random stuffs"
+sidebar.subtitle = "Posting random stuff"
 article.license.default = "Licensed under CC BY-NC-SA 4.0"
 
 [zh-cn]
