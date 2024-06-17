@@ -62,8 +62,8 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 
 * 打开仓库模板的页面，可以根据 ReadMe 的内容进行操作。
 * 如果想要本地构建网站，执行完第一步之后就可以了。
-* 如果想要使用 Github Codespace （网页编辑）就可以按照 ReadMe 内容继续，并且可以跳过 [本地环境配置](#本地环境配置以及本地网站)
-* 把创建好的仓库克隆到本地（可以使用命令行 `git clone` 或者直接使用 GitHub Desktop）
+* 如果想要使用 Github Codespace （网页编辑，新手推荐！因为配环境是个相对麻烦的事情）就可以按照 ReadMe 内容继续，并且可以跳过 [本地环境配置](#本地环境配置以及本地网站) 这一小节
+* 如果想要本地部署网站，需要把创建好的仓库克隆到本地（可以使用命令行 `git clone` 或者直接使用 GitHub Desktop）
 
 {{<notice tip>}}
 进入仓库的设置页面后点击 `Pages` 即可看到你的博客网页地址，可以复制记下来以便之后需要用到
@@ -73,6 +73,8 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 
 {{<notice info>}}
 此篇文章针对 Windows 环境编写，因此路径分隔符均为 `\`， 如果使用 macOS 或者 Linux 需要将路径分隔符替换为 `/`
+
+本地配置部分对于计算机基础要求相对较高一点，因此以下内容默认你能够阅读 Hugo 英文文档，并且有了解过下载各种语言环境/配置环境变量等信息
 {{</notice>}}
 
 * 根据 [Hugo 官方文档](https://gohugo.io/installation) 进行配置
@@ -174,6 +176,11 @@ Hugo 有内置的多语言配置，而 Stack 主题也提供了 [方法](https:/
     将 favicon 修改为你的图片路径即可
 
 * 其他任意图片，如果是使用在 `icon` 属性里，那么都是将图片放入到 `assets\icons` 里即可
+
+{{<notice tip>}}
+Stack 主题有内置部分 icon 的 svg 文件可以直接通过文件名进行访问，比如 `brand-github`, `user` 等。
+具体信息可以查看 [这里](https://github.com/CaiJimmy/hugo-theme-stack/tree/master/assets/icons)
+{{</notice>}}
 
 ## 左侧边栏设置
 
