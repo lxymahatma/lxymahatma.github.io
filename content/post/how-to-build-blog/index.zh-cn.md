@@ -132,16 +132,22 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 
 Hugo 有内置的多语言配置，而 Stack 主题也提供了 [方法](https://stack.jimmycai.com/config/i18n)，此教程根据 Hugo 官方内置配置模板进行教学。
 
+Hugo 官方提供了两种配置方法：
+
+1. 通过 `languages.toml` 设置 `contentDir`，为每一种语言设置不同的文件夹来存放文章
+2. 将文章的文件名后缀前添加对应语言代号，放在同一个文件夹里，由 Hugo 自动处理。
+
+#### 通用设置
+
 * 进入 `config\_default` 文件夹，找到并重命名 `_languages.toml` 为 `languages.toml`，打开文件
 * 接着，根据 [Hugo 官方文档](https://gohugo.io/content-management/multilingual) 进行配置
   * 因为文件名已经为 `languages.toml`，因此并不需要写成 `[languages.en]` 的形式，只要和已有的一样写成 `[en]`就行
-  * 可以参考 [我的配置](https://github.com/lxymahatma/lxymahatma.github.io/blob/main/config/_default/languages.toml) 进行修改
+  * 可以参考 [我的配置](languages-example.toml) 进行修改
 
 下面简单讲解一下我的配置中各项代表了什么
 
 * `languageName`: 切换语言的下拉框中的语言名字显示
 * `languageDirection`: 语言阅读方向（从左往右）
-* `contentDir`: 博客内容的文件夹（可以对于不同语言设置发布内容不同）
 * `title`: 博客的标题
 * `weight`: 下拉框中的排序权重，越高越在底下
 
@@ -151,6 +157,17 @@ Hugo 有内置的多语言配置，而 Stack 主题也提供了 [方法](https:/
 * `article.license.default`: 文章底部的协议
 
 我把 `params.toml` 里的这两个配置给删除并且设置了多语言，如果不需要的话也可以不修改
+
+#### 设置 contentDir （稍微复杂版本）
+
+* 在 `langauges.toml` 中，每一个语言配置下都添加 `contentDir = "xxx"` （一般来说为 `content/en`，`content/zh-cn` 等）
+* `contentDir` 用来设置放置博客文章内容的文件夹，只要把对应文章放在对应语言的文件夹内，就可以设置不同语言的发布内容
+
+#### 修改文件名 （简单版本）
+
+* 在修改为多语言之前，每个文章的文件夹里都有一个 `index.md` 的 Markdown 文件，将其文件名添加你使用的语言代号（如英语就是 `en`，简体中文就是 `zh-cn`）
+* 修改完后的文件名应为 `index.en.md` 和 `index.zh-cn.md`
+* 在这种情况下，Hugo 会自动处理对应的文章的中英文关系，因此相对来说较为简单
 
 ## 图片修改
 
@@ -185,7 +202,7 @@ Stack 主题有内置部分 icon 的 svg 文件可以直接通过文件名进行
 ## 左侧边栏设置
 
 {{<notice info>}}
-此小节内，`content` 文件夹代指你设置的对应 `contentDir` 文件夹（如果没有设置多语言那么就是 `content` 文件夹）
+此小节内，如果有设置 `contentDir` 文件夹变量，那么`content` 文件夹代指你设置的对应 `contentDir` 文件夹
 {{</notice>}}
 
 如果你已经成功克隆了仓库，那么你的 `content` 文件夹底下已经有几个例子了，因此只是简单解释一下已有的例子并且赘述一下如何创建更多的栏目
@@ -229,7 +246,7 @@ menu:
 ## 分类与标签设置
 
 {{<notice info>}}
-此小节内，`content` 文件夹代指你设置的对应 `contentDir` 文件夹（如果没有设置多语言那么就是 `content` 文件夹）
+此小节内，如果有设置 `contentDir` 文件夹变量，那么`content` 文件夹代指你设置的对应 `contentDir` 文件夹
 {{</notice>}}
 
 ### 分类
@@ -326,7 +343,7 @@ title: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
 ```yaml
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | humanize | title }}"
-description: 
+description:
 slug: "{{ .Name }}"
 date: {{ .Date | time.Format "2006-01-02"}}
 categories:
