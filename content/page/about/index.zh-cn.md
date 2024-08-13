@@ -2,7 +2,7 @@
 title: "关于我"
 slug: "about"
 menu:
-    main: 
+    main:
         weight: 4
         params:
             icon: user

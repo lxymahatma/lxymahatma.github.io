@@ -10,6 +10,7 @@ menu:
 comments: false
 license: false
 readingTime: false
+
 ---
 
 * Undergraduate student in Ritsumeikan University
