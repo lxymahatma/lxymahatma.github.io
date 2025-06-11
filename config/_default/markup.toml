@@ -3,15 +3,15 @@
     unsafe = true
 
 [tableOfContents]
-    endLevel   = 4
-    ordered    = true
+    endLevel = 4
+    ordered = true
     startLevel = 2
 
 [highlight]
-    noClasses          = false
-    codeFences         = true
-    guessSyntax        = true
-    lineNoStart        = 1
-    lineNos            = true
+    codeFences = true
+    guessSyntax = true
+    lineNoStart = 1
+    lineNos = true
     lineNumbersInTable = true
-    tabWidth           = 4
+    noClasses = false
+    tabWidth = 4

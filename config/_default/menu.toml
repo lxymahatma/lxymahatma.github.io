@@ -7,11 +7,11 @@
 #icon = "home"
 #newtab = true
 
-# Bilibili 
+# Bilibili
 [[social]]
     identifier = "bilibili"
-    name       = "BiliBili"
-    url        = "https://space.bilibili.com/255895683"
+    name = "BiliBili"
+    url = "https://space.bilibili.com/255895683"
 
     [social.params]
         icon = "brand-bilibili"
@@ -19,8 +19,8 @@
 # GitHub
 [[social]]
     identifier = "github"
-    name       = "GitHub"
-    url        = "https://github.com/lxymahatma"
+    name = "GitHub"
+    url = "https://github.com/lxymahatma"
 
     [social.params]
         icon = "brand-github"

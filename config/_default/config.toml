@@ -1,4 +1,4 @@
-baseurl      = "https://lxymahatma.github.io"
+baseurl = "https://lxymahatma.github.io"
 languageCode = "zh-cn"
 
 # For publishing pages in right time
