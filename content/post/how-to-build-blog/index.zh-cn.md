@@ -65,17 +65,15 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 * 如果想要使用 Github Codespace （网页编辑，新手推荐！因为配环境是个相对麻烦的事情）就可以按照 ReadMe 内容继续，并且可以跳过 [本地环境配置](#本地环境配置以及本地网站) 这一小节
 * 如果想要本地部署网站，需要把创建好的仓库克隆到本地（可以使用命令行 `git clone` 或者直接使用 GitHub Desktop）
 
-{{<notice tip>}}
-进入仓库的设置页面后点击 `Pages` 即可看到你的博客网页地址，可以复制记下来以便之后需要用到
-{{</notice>}}
+> [!TIP]
+> 进入仓库的设置页面后点击 `Pages` 即可看到你的博客网页地址，可以复制记下来以便之后需要用到
 
 ## 本地环境配置以及本地网站
 
-{{<notice info>}}
-此篇文章针对 Windows 环境编写，因此路径分隔符均为 `\`， 如果使用 macOS 或者 Linux 需要将路径分隔符替换为 `/`
-
-本地配置部分对于计算机基础要求相对较高一点，因此以下内容默认你能够阅读 Hugo 英文文档，并且有了解过下载各种语言环境/配置环境变量等信息
-{{</notice>}}
+> [!IMPORTANT]
+> 此篇文章针对 Windows 环境编写，因此路径分隔符均为 `\`， 如果使用 macOS 或者 Linux 需要将路径分隔符替换为 `/`
+>
+> 本地配置部分对于计算机基础要求相对较高一点，因此以下内容默认你能够阅读 Hugo 英文文档，并且有了解过下载各种语言环境/配置环境变量等信息
 
 * 根据 [Hugo 官方文档](https://gohugo.io/installation) 进行配置
 * 下载安装 Git, Go, Dart Sass 以及 Hugo Extended
@@ -86,9 +84,8 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 
 ## 修改配置
 
-{{<notice info>}}
-注意：此处配置文件都使用 Stack 主题模板的 toml 文件，如果你不熟悉 toml 语法，可以通过 [toml 官方网站](https://toml.io/cn/v1.0.0) 学习, 也可以使用 yaml 或者 json
-{{</notice>}}
+> [!IMPORTANT]
+> 注意：此处配置文件都使用 Stack 主题模板的 toml 文件，如果你不熟悉 toml 语法，可以通过 [toml 官方网站](https://toml.io/cn/v1.0.0) 学习, 也可以使用 yaml 或者 json
 
 ### 基础配置
 
@@ -113,10 +110,9 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 * `url`: 用户点击按钮后跳转的链接
 * `params.icon`: 按钮图标
 
-{{<notice note>}}
-如果你想要的图标并没有内置，Hugo 会提醒你需要添加对应图片。
-可参考 [Stack 文档](https://stack.jimmycai.com/config/menu#add-custom-icon)，将图片添加到 `assets\icons` 下即可。
-{{</notice>}}
+> [!NOTE]
+> 如果你想要的图标并没有内置，Hugo 会提醒你需要添加对应图片。
+> 可参考 [Stack 文档](https://stack.jimmycai.com/config/menu#add-custom-icon)，将图片添加到 `assets\icons` 下即可。
 
 #### `params.toml`
 
@@ -194,16 +190,14 @@ Hugo 官方提供了两种配置方法：
 
 * 其他任意图片，如果是使用在 `icon` 属性里，那么都是将图片放入到 `assets\icons` 里即可
 
-{{<notice tip>}}
-Stack 主题有内置部分 icon 的 svg 文件可以直接通过文件名进行访问，比如 `brand-github`, `user` 等。
-具体信息可以查看 [这里](https://github.com/CaiJimmy/hugo-theme-stack/tree/master/assets/icons)
-{{</notice>}}
+> [!TIP]
+> Stack 主题有内置部分 icon 的 svg 文件可以直接通过文件名进行访问，比如 `brand-github`, `user` 等。
+> 具体信息可以查看 [这里](https://github.com/CaiJimmy/hugo-theme-stack/tree/master/assets/icons)
 
 ## 左侧边栏设置
 
-{{<notice info>}}
-此小节内，如果有设置 `contentDir` 文件夹变量，那么`content` 文件夹代指你设置的对应 `contentDir` 文件夹
-{{</notice>}}
+> [!IMPORTANT]
+> 此小节内，如果有设置 `contentDir` 文件夹变量，那么`content` 文件夹代指你设置的对应 `contentDir` 文件夹
 
 如果你已经成功克隆了仓库，那么你的 `content` 文件夹底下已经有几个例子了，因此只是简单解释一下已有的例子并且赘述一下如何创建更多的栏目
 
@@ -211,20 +205,19 @@ Stack 主题有内置部分 icon 的 svg 文件可以直接通过文件名进行
 
 在 `content` 文件夹下有名为 `_index.md` 的文件：
 
-{{<notice example>}}
-
-```yaml
----
-menu:
-    main:
-        name: 主页
-        weight: 1
-        params:
-            icon: home
----
-```
-
-{{</notice>}}
+> [!NOTE]
+> 示例：
+>
+> ```yaml
+> ---
+> menu:
+>     main:
+>         name: 主页
+>         weight: 1
+>         params:
+>             icon: home
+> ---
+> ```
 
 其中，`weight` 设置为 1 表示将这个按钮放到左侧边栏最上方，`icon` 设置为 `home` 就可以使用默认的主页图标
 
@@ -235,40 +228,37 @@ menu:
 
 在 `content\page` 文件夹下创建一个新的文件夹，起名为你想要的按钮名字
 
-{{<notice warning>}}
-不要重命名 `page` 文件夹！
-
-如果文件夹名字不为 `page`，可能会造成有些功能无法使用（搜索）
-{{</notice>}}
+> [!WARNING]
+> 不要重命名 `page` 文件夹！
+>
+> 如果文件夹名字不为 `page`，可能会造成有些功能无法使用（搜索）
 
 在新的文件夹内添加 `index.md` 文件，根据 home 的模板修改即可
 
 ## 分类与标签设置
 
-{{<notice info>}}
-此小节内，如果有设置 `contentDir` 文件夹变量，那么`content` 文件夹代指你设置的对应 `contentDir` 文件夹
-{{</notice>}}
+> [!IMPORTANT]
+> 此小节内，如果有设置 `contentDir` 文件夹变量，那么`content` 文件夹代指你设置的对应 `contentDir` 文件夹
 
 ### 分类
 
 * 在 `content` 文件夹下创建一个名为 `categories` 的文件夹，在里面创建一个新的文件夹，起名为你想要的分类名
 * 在新文件夹里创建一个名为 `_index.md` 的 Markdown 文件，根据以下模板进行修改即可
 
-{{<notice example>}}
-
-```yaml
----
-title: Example Category
-description: A description of this category
-image:
-
-style:
-    background: "#2a9d8f"
-    color: "#fff"
----
-```
-
-{{</notice>}}
+> [!NOTE]
+> 示例：
+>
+> ```yaml
+> ---
+> title: Example Category
+> description: A description of this category
+> image:
+>
+> style:
+>     background: "#2a9d8f"
+>     color: "#fff"
+> ---
+> ```
 
 参数含义：
 
@@ -284,23 +274,21 @@ style:
 * 在 `content` 文件夹下创建一个名为 `tags` 的文件夹，在里面创建一个新的文件夹，起名为你想要的标签名
 * 在新文件夹里创建一个名为 `_index.md` 的 Markdown 文件，根据以下模板进行修改即可
 
-{{<notice example>}}
+> [!NOTE]
+> 示例：
+>
+> ```yaml
+> ---
+> title: Example Category
+> description: A description of this category
+> image:
+> ---
+> ```
 
-```yaml
----
-title: Example Category
-description: A description of this category
-image:
----
-```
-
-{{</notice>}}
-
-{{<notice note>}}
-标签和分类唯一的区别就是不能自定义勋章的颜色。
-
-但同时，通过 `widgets` 设置的右侧栏目并不会显示分类的自定义颜色
-{{</notice>}}
+> [!NOTE]
+> 标签和分类唯一的区别就是不能自定义勋章的颜色。
+>
+> 但同时，通过 `widgets` 设置的右侧栏目并不会显示分类的自定义颜色
 
 ## 创建文章模板
 
@@ -315,17 +303,16 @@ image:
 
 * 在 `archetypes` 文件夹底下创建一个名为 `default.md` 的 Markdown 文件，里面的内容参考以下模板（官方）：
 
-{{<notice example>}}
-
-```yaml
----
-date: '{{ .Date }}'
-draft: true
-title: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
----
-```
-
-{{</notice>}}
+> [!NOTE]
+> 示例：
+>
+> ```yaml
+> ---
+> date: '{{ .Date }}'
+> draft: true
+> title: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
+> ---
+> ```
 
 * `date`: 文章创建日期
 * `draft`: 文章是否是草稿，如果是草稿则不会发布到网站上
@@ -338,25 +325,24 @@ title: '{{ replace .File.ContentBaseName `-` ` ` | title }}'
 * 在 `archetypes` 文件夹底下创建一个名为 `post` 的文件夹，里面添加一个名为 `index.md` 的 Markdown 文件。
 下面是我的模板：
 
-{{<notice example>}}
-
-```yaml
----
-title: "{{ replace .File.ContentBaseName "-" " " | humanize | title }}"
-description:
-slug: "{{ .Name }}"
-date: {{ .Date | time.Format "2006-01-02"}}
-categories:
-    - Category
-tags:
-    - Tag1
-    - Tag2
-    - Tag3
----
-
-```
-
-{{</notice>}}
+> [!NOTE]
+> 示例：
+>
+> ```yaml
+> ---
+> title: "{{ replace .File.ContentBaseName "-" " " | humanize | title }}"
+> description:
+> slug: "{{ .Name }}"
+> date: {{ .Date | time.Format "2006-01-02"}}
+> categories:
+>     - Category
+> tags:
+>     - Tag1
+>     - Tag2
+>     - Tag3
+> ---
+>
+> ```
 
 * `title`: 使用了 humanize 函数让标题更加可读
 * `description`: 文章内容概述
