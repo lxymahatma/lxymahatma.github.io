@@ -1,5 +1,5 @@
 baseurl = "https://lxymahatma.github.io"
-languageCode = "zh-cn"
+locale = "zh-cn"
 
 # For publishing pages in right time
 timeZone = "Asia/Tokyo"

@@ -1,5 +1,5 @@
 # Pages placed under these sections will be shown on homepage and archive page.
-mainSections = [ "post" ]
+mainSections = ["post"]
 # Output page's full content in RSS.
 favicon = "img/favicon.png"
 rssFullContent = true
@@ -99,10 +99,10 @@ rssFullContent = true
 
     [comments.waline]
         avatar = ""
-        emoji = [ "https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo" ]
+        emoji = ["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"]
         lang = ""
         placeholder = ""
-        requiredMeta = [ "email", "name", "url" ]
+        requiredMeta = ["email", "name", "url"]
         serverURL = ""
         visitor = ""
 
