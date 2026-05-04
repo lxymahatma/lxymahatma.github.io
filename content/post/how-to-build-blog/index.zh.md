@@ -95,7 +95,7 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 * `languageCode`: Hugo 用来填充内置 RSS 模板中的语言元素，一般来说写成和网页语言一致即可
 * `paginate`: 博客主页每一页可以显示多少篇文章
 * `title`: 博客的标题
-* `defaultContentLanguage`: 默认网页语言（`zh-cn`）
+* `defaultContentLanguage`: 默认网页语言（`zh`）
 * `hasCJKLanguage`: 如果有使用中文（那肯定啊）就设置为 `true`
 * `disqusShortname`: 评论系统的设置，只有用 disqus 作为评论系统的需要设置
 
@@ -156,13 +156,13 @@ Hugo 官方提供了两种配置方法：
 
 #### 设置 contentDir （稍微复杂版本）
 
-* 在 `langauges.toml` 中，每一个语言配置下都添加 `contentDir = "xxx"` （一般来说为 `content/en`，`content/zh-cn` 等）
+* 在 `langauges.toml` 中，每一个语言配置下都添加 `contentDir = "xxx"` （一般来说为 `content/en`，`content/zh` 等）
 * `contentDir` 用来设置放置博客文章内容的文件夹，只要把对应文章放在对应语言的文件夹内，就可以设置不同语言的发布内容
 
 #### 修改文件名 （简单版本）
 
-* 在修改为多语言之前，每个文章的文件夹里都有一个 `index.md` 的 Markdown 文件，将其文件名添加你使用的语言代号（如英语就是 `en`，简体中文就是 `zh-cn`）
-* 修改完后的文件名应为 `index.en.md` 和 `index.zh-cn.md`
+* 在修改为多语言之前，每个文章的文件夹里都有一个 `index.md` 的 Markdown 文件，将其文件名添加你使用的语言代号（如英语就是 `en`，简体中文就是 `zh`）
+* 修改完后的文件名应为 `index.en.md` 和 `index.zh.md`
 * 在这种情况下，Hugo 会自动处理对应的文章的中英文关系，因此相对来说较为简单
 
 ## 图片修改
