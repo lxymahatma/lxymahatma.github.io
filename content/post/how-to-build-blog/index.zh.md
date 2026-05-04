@@ -3,6 +3,7 @@ title: "如何快速创建一个博客"
 description: 从零开始的 GitHub Page + Hugo 简易博客打造教程
 slug: "how-to-build-blog"
 date: 2024-06-15
+lastmod: 2026-05-05
 categories:
     - Tutorial
 tags:
@@ -92,8 +93,8 @@ Hugo 的网站上有许多好看可用的 [博客主题](https://themes.gohugo.i
 #### `config.toml`
 
 * `baseurl`: 博客网页地址
-* `languageCode`: Hugo 用来填充内置 RSS 模板中的语言元素，一般来说写成和网页语言一致即可
-* `paginate`: 博客主页每一页可以显示多少篇文章
+* `locale`: Hugo 用来填充内置 RSS 模板中的语言元素，一般来说写成和网页语言一致即可
+* `[pagination] pagerSize`: 博客主页每一页可以显示多少篇文章
 * `title`: 博客的标题
 * `defaultContentLanguage`: 默认网页语言（`zh`）
 * `hasCJKLanguage`: 如果有使用中文（那肯定啊）就设置为 `true`
@@ -142,8 +143,8 @@ Hugo 官方提供了两种配置方法：
 
 下面简单讲解一下我的配置中各项代表了什么
 
-* `languageName`: 切换语言的下拉框中的语言名字显示
-* `languageDirection`: 语言阅读方向（从左往右）
+* `label`: 切换语言的下拉框中的语言名字显示
+* `direction`: 语言阅读方向（从左往右）
 * `title`: 博客的标题
 * `weight`: 下拉框中的排序权重，越高越在底下
 
@@ -171,22 +172,20 @@ Hugo 官方提供了两种配置方法：
   * 如果你的图片类型不是 `.png` 或者你不想起名叫 `avatar.png`，找到 `params.toml` 中的
 
     ```toml
-    [sidebar.avatar]
-    enabled = true
-    local = true
-    src = "img/avatar.png"
+    [sidebar]
+        avatar = "img/avatar.png"
     ```
 
-    将 src 修改为你的图片路径即可
+    将 avatar 修改为你的图片路径即可（路径相对 `assets` 文件夹）
 
-* 网站图标的修改是在 `static\favicon.png`，把这个图片替换成你想要的网站图标
+* 网站图标的修改是在 `assets\img\favicon.png`，把这个图片替换成你想要的网站图标
   * 如果你的图片类型不是 `.png` 或者你不想起名叫 `favicon.png`，找到 `params.toml` 中的
 
     ```toml
-    favicon = "/favicon.png"
+    favicon = "img/favicon.png"
     ```
 
-    将 favicon 修改为你的图片路径即可
+    将 favicon 修改为你的图片路径即可（路径相对 `assets` 文件夹）
 
 * 其他任意图片，如果是使用在 `icon` 属性里，那么都是将图片放入到 `assets\icons` 里即可
 
