@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on lxymahatma's blog</title><link>https://lxymahatma.github.io/en/post/</link><description>Recent content in Posts on lxymahatma's blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 05 May 2026 00:00:00 +0900</lastBuildDate><atom:link href="https://lxymahatma.github.io/en/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction</title><link>https://lxymahatma.github.io/en/p/introduction/</link><pubDate>Sat, 15 Jun 2024 00:00:00 +0900</pubDate><guid>https://lxymahatma.github.io/en/p/introduction/</guid><description>&lt;p&gt;This blog is created when I was bored, so just posting some random stuff.&lt;/p&gt;
+&lt;p&gt;Original plan is to posting something interesting when I&amp;rsquo;m investgate some stuff, most likely related to C# but who knows.&lt;/p&gt;
+&lt;p&gt;Anyway, to some extent, please look forward to it lol.&lt;/p&gt;</description></item><item><title>How to Quickly Build a Blog</title><link>https://lxymahatma.github.io/en/p/how-to-build-blog/</link><pubDate>Sat, 15 Jun 2024 00:00:00 +0900</pubDate><guid>https://lxymahatma.github.io/en/p/how-to-build-blog/</guid><description>&lt;p&gt;I was bored recently and had nothing to do (definitely not because I had too little homework), so I figured I&amp;rsquo;d build a personal blog to write some stuff. At least it makes me look kinda cool that way (jk), and that&amp;rsquo;s how this blog came to be.&lt;/p&gt;
+&lt;p&gt;After getting the basic blog up, I started wondering what to actually post. Thinking it over, I figured why not just write a tutorial about the process of building this blog itself — it&amp;rsquo;s both a recap of what I did over the past few days and could potentially help others. What a wonderful thing.jpg&lt;/p&gt;
+&lt;p&gt;Without further ado, let&amp;rsquo;s get started:&lt;/p&gt;
+&lt;h2 id="prerequisites"&gt;Prerequisites
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;A &lt;a class="link" href="https://github.com" target="_blank" rel="noopener"
+ &gt;GitHub&lt;/a&gt; account&lt;/li&gt;
+&lt;li&gt;A computer (because I personally recommend running the demo locally rather than editing online)&lt;/li&gt;
+&lt;li&gt;Ability to read English (or knowing how to use translation software)&lt;/li&gt;
+&lt;li&gt;Basic computer knowledge (can use the command line, basic GitHub operations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="getting-started"&gt;Getting Started
+&lt;/h2&gt;&lt;p&gt;First, if you&amp;rsquo;re not a frontend developer, or you don&amp;rsquo;t want to reinvent the wheel, you can find a theme you like on Hugo&amp;rsquo;s official website.&lt;/p&gt;
+&lt;p&gt;Hugo&amp;rsquo;s site has many good-looking and usable &lt;a class="link" href="https://themes.gohugo.io/tags/blog/" target="_blank" rel="noopener"
+ &gt;blog themes&lt;/a&gt;. I personally think the following four are pretty solid (sorted by Star count, most to least):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-papermod" target="_blank" rel="noopener"
+ &gt;PaperMod&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-theme-stack" target="_blank" rel="noopener"
+ &gt;Stack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-paper" target="_blank" rel="noopener"
+ &gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://themes.gohugo.io/themes/hugo-theme-tailwind" target="_blank" rel="noopener"
+ &gt;TailWind&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This blog is built with the Stack theme, so the following content mainly walks through the project file structure of the Stack theme.&lt;/p&gt;
+&lt;h2 id="creating-the-repository"&gt;Creating the Repository
+&lt;/h2&gt;&lt;p&gt;Since we&amp;rsquo;ll use GitHub Pages to deploy the blog, we need to create a GitHub repository first.&lt;/p&gt;
+&lt;p&gt;Generally, you&amp;rsquo;d create a repository named &lt;code&gt;GitHubUsername.github.io&lt;/code&gt; as your personal blog&amp;rsquo;s address. Example: &lt;code&gt;lxymahatma.github.io&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Many Hugo themes (like Stack) provide a &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack-starter" target="_blank" rel="noopener"
+ &gt;repository template&lt;/a&gt; specifically for creating new repositories. Two scenarios to discuss here:&lt;/p&gt;
+&lt;h3 id="traditional-way-no-use-this-template-button"&gt;Traditional way (no &amp;ldquo;Use this template&amp;rdquo; button)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Create a new repository directly through the GitHub web UI&lt;/li&gt;
+&lt;li&gt;Clone both your created repository and the template repository to local (use &lt;code&gt;git clone&lt;/code&gt; from the command line, or just use GitHub Desktop)&lt;/li&gt;
+&lt;li&gt;Copy what you need from the template repository into your repository, generally these:
+&lt;ul&gt;
+&lt;li&gt;.github&lt;/li&gt;
+&lt;li&gt;assets&lt;/li&gt;
+&lt;li&gt;config&lt;/li&gt;
+&lt;li&gt;content&lt;/li&gt;
+&lt;li&gt;static&lt;/li&gt;
+&lt;li&gt;.gitignore&lt;/li&gt;
+&lt;li&gt;go.mod&lt;/li&gt;
+&lt;li&gt;go.sum&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="simple-version-recommended-for-beginners"&gt;Simple version (recommended for beginners!)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Open the template repository&amp;rsquo;s page and follow the ReadMe.&lt;/li&gt;
+&lt;li&gt;If you want to build the website locally, you&amp;rsquo;re done after the first step.&lt;/li&gt;
+&lt;li&gt;If you want to use GitHub Codespace (web editing, recommended for beginners! Because environment setup is kinda annoying) you can continue with the ReadMe and skip the &lt;a class="link" href="#local-environment-setup-and-local-website" &gt;Local environment setup&lt;/a&gt; section.&lt;/li&gt;
+&lt;li&gt;If you want to deploy locally, clone the created repository to your machine (use &lt;code&gt;git clone&lt;/code&gt; from the command line, or just GitHub Desktop)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class="alert alert-tip"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;💡&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Tip&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;After entering the repository&amp;rsquo;s settings page, click &lt;code&gt;Pages&lt;/code&gt; to see your blog&amp;rsquo;s webpage address. Worth copying it down for later.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;h2 id="local-environment-setup-and-local-website"&gt;Local Environment Setup and Local Website
+&lt;/h2&gt;&lt;blockquote class="alert alert-important"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📌&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Important&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;This article is written for Windows, so path separators are &lt;code&gt;\&lt;/code&gt;. If you&amp;rsquo;re on macOS or Linux, replace path separators with &lt;code&gt;/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The local setup section requires somewhat higher computer fundamentals, so the following content assumes you can read Hugo&amp;rsquo;s English documentation and have some understanding of installing language environments / configuring environment variables, etc.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;Configure according to &lt;a class="link" href="https://gohugo.io/installation" target="_blank" rel="noopener"
+ &gt;Hugo&amp;rsquo;s official docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Download and install Git, Go, Dart Sass, and Hugo Extended&lt;/li&gt;
+&lt;li&gt;Use the command line to enter your cloned repository folder, run &lt;code&gt;hugo server&lt;/code&gt;, and you should see Hugo&amp;rsquo;s prompt
+&lt;code&gt;Web Server is available at &amp;lt;http://localhost:1313/&amp;gt; (bind address 127.0.0.1)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Hold Ctrl and click the link to open the page in your default browser&lt;/li&gt;
+&lt;li&gt;The webpage will hot-reload based on local file changes, so it&amp;rsquo;s super useful — strongly recommend local deployment for easier editing and previewing!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="modifying-configuration"&gt;Modifying Configuration
+&lt;/h2&gt;&lt;blockquote class="alert alert-important"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📌&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Important&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;Note: All configuration files here use the Stack theme template&amp;rsquo;s toml files. If you&amp;rsquo;re not familiar with toml syntax, you can learn from &lt;a class="link" href="https://toml.io/cn/v1.0.0" target="_blank" rel="noopener"
+ &gt;the toml official site&lt;/a&gt;. yaml or json work too.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;h3 id="basic-configuration"&gt;Basic Configuration
+&lt;/h3&gt;&lt;h4 id="configtoml"&gt;&lt;code&gt;config.toml&lt;/code&gt;
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;baseurl&lt;/code&gt;: Blog webpage address&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;locale&lt;/code&gt;: Hugo uses this to populate the language element in the built-in RSS template. Generally, write it the same as the webpage language.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[pagination] pagerSize&lt;/code&gt;: How many articles can show per page on the blog homepage&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: Blog title&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;defaultContentLanguage&lt;/code&gt;: Default webpage language (&lt;code&gt;zh&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hasCJKLanguage&lt;/code&gt;: If you use Chinese (which obviously you do) set it to &lt;code&gt;true&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;disqusShortname&lt;/code&gt;: Comment system setting, only those using disqus as the comment system need to set this&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="menutoml"&gt;&lt;code&gt;menu.toml&lt;/code&gt;
+&lt;/h4&gt;&lt;p&gt;This file is used to configure your left sidebar, but per &lt;a class="link" href="https://stack.jimmycai.com/config/menu" target="_blank" rel="noopener"
+ &gt;Stack&amp;rsquo;s documentation recommendation&lt;/a&gt;, it&amp;rsquo;s best not to configure through this file, but rather through &lt;a class="link" href="#left-sidebar-setup" &gt;this method&lt;/a&gt;.
+So this section only describes how to set the icons on the sidebar.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[[social]]&lt;/code&gt; represents a &lt;code&gt;social&lt;/code&gt; array; refer to the original template for modifications&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;identifier&lt;/code&gt;: Internal identifier, must be unique&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;name&lt;/code&gt;: The text shown when users hover over the button&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;url&lt;/code&gt;: The link users navigate to when clicking the button&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;params.icon&lt;/code&gt;: Button icon&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class="alert alert-note"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📝&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Note&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;If the icon you want isn&amp;rsquo;t built-in, Hugo will remind you to add the corresponding image.
+Refer to &lt;a class="link" href="https://stack.jimmycai.com/config/menu#add-custom-icon" target="_blank" rel="noopener"
+ &gt;Stack documentation&lt;/a&gt;, just add the image to &lt;code&gt;assets\icons&lt;/code&gt;.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;h4 id="paramstoml"&gt;&lt;code&gt;params.toml&lt;/code&gt;
+&lt;/h4&gt;&lt;p&gt;There&amp;rsquo;s really too much to set in here. Some content will be mentioned later, so I&amp;rsquo;ll only cover the more important parts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mainSections&lt;/code&gt;: Articles placed under this folder will be published to the website&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;footer.since&lt;/code&gt;: Footer, the year this website started&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;widgets&lt;/code&gt;: The right side content of the homepage on desktop. Refer to &lt;a class="link" href="https://stack.jimmycai.com/config/widgets" target="_blank" rel="noopener"
+ &gt;Stack documentation&lt;/a&gt; for specific settings.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="multilingual-configuration"&gt;Multilingual Configuration
+&lt;/h3&gt;&lt;p&gt;First you need to decide whether your personal blog needs multilingual support. If not, skip directly to the next section.&lt;/p&gt;
+&lt;p&gt;Hugo has built-in multilingual configuration, and the Stack theme also provides &lt;a class="link" href="https://stack.jimmycai.com/config/i18n" target="_blank" rel="noopener"
+ &gt;methods&lt;/a&gt;. This tutorial teaches based on Hugo&amp;rsquo;s official built-in configuration template.&lt;/p&gt;
+&lt;p&gt;Hugo officially provides two configuration methods:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Set &lt;code&gt;contentDir&lt;/code&gt; via &lt;code&gt;languages.toml&lt;/code&gt; to set different folders for storing articles for each language&lt;/li&gt;
+&lt;li&gt;Add the corresponding language code as a suffix to the article filename, place them in the same folder, and let Hugo handle them automatically.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="general-settings"&gt;General Settings
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Enter the &lt;code&gt;config\_default&lt;/code&gt; folder, find and rename &lt;code&gt;_languages.toml&lt;/code&gt; to &lt;code&gt;languages.toml&lt;/code&gt;, open the file&lt;/li&gt;
+&lt;li&gt;Then, configure according to &lt;a class="link" href="https://gohugo.io/content-management/multilingual" target="_blank" rel="noopener"
+ &gt;Hugo&amp;rsquo;s official documentation&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;Since the file name is already &lt;code&gt;languages.toml&lt;/code&gt;, you don&amp;rsquo;t need to write &lt;code&gt;[languages.en]&lt;/code&gt; form, just write &lt;code&gt;[en]&lt;/code&gt; like the existing one&lt;/li&gt;
+&lt;li&gt;You can refer to &lt;a class="link" href="languages-example.toml" &gt;my configuration&lt;/a&gt; for modifications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here&amp;rsquo;s a brief explanation of what each item in my configuration represents:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;label&lt;/code&gt;: The language name displayed in the language switcher dropdown&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;direction&lt;/code&gt;: Language reading direction (left-to-right)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: Blog title&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: Sorting weight in the dropdown — higher values go to the bottom&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And &lt;code&gt;[params]&lt;/code&gt; are configurations from &lt;code&gt;params.toml&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sidebar.subtitle&lt;/code&gt;: Blog subtitle&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;article.license.default&lt;/code&gt;: License at the bottom of articles&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I deleted these two configurations from &lt;code&gt;params.toml&lt;/code&gt; and set them per-language. If you don&amp;rsquo;t need this you can leave them alone.&lt;/p&gt;
+&lt;h4 id="setting-contentdir-slightly-more-complex-version"&gt;Setting contentDir (slightly more complex version)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;In &lt;code&gt;languages.toml&lt;/code&gt;, add &lt;code&gt;contentDir = &amp;quot;xxx&amp;quot;&lt;/code&gt; under each language config (generally &lt;code&gt;content/en&lt;/code&gt;, &lt;code&gt;content/zh&lt;/code&gt;, etc.)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;contentDir&lt;/code&gt; sets the folder where blog article content is placed. Just put the corresponding articles in the corresponding language folder, and you can publish different language content.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id="modify-filename-simple-version"&gt;Modify Filename (simple version)
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;Before changing to multilingual, each article folder has an &lt;code&gt;index.md&lt;/code&gt; Markdown file. Add the language code you use to the filename (e.g., for English it&amp;rsquo;s &lt;code&gt;en&lt;/code&gt;, for Simplified Chinese it&amp;rsquo;s &lt;code&gt;zh&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;The modified filenames should be &lt;code&gt;index.en.md&lt;/code&gt; and &lt;code&gt;index.zh.md&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;In this case, Hugo will automatically handle the relationship between Chinese and English articles, so it&amp;rsquo;s relatively simple&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="image-modifications"&gt;Image Modifications
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Avatar modification is at &lt;code&gt;assets\img\avatar.png&lt;/code&gt;. Just replace this image with the avatar you want.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If your image type is not &lt;code&gt;.png&lt;/code&gt; or you don&amp;rsquo;t want to name it &lt;code&gt;avatar.png&lt;/code&gt;, find this in &lt;code&gt;params.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;sidebar&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nx"&gt;avatar&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;img/avatar.png&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Modify avatar to your image path (path is relative to &lt;code&gt;assets&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Website favicon modification is at &lt;code&gt;assets\img\favicon.png&lt;/code&gt;. Just replace this image with the favicon you want.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;If your image type is not &lt;code&gt;.png&lt;/code&gt; or you don&amp;rsquo;t want to name it &lt;code&gt;favicon.png&lt;/code&gt;, find this in &lt;code&gt;params.toml&lt;/code&gt;:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;favicon&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;img/favicon.png&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Modify favicon to your image path (path is relative to &lt;code&gt;assets&lt;/code&gt;).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For any other images, if used in the &lt;code&gt;icon&lt;/code&gt; attribute, just put the image into &lt;code&gt;assets\icons&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class="alert alert-tip"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;💡&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Tip&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;The Stack theme has built-in svg files for some icons that can be accessed directly via filename, like &lt;code&gt;brand-github&lt;/code&gt;, &lt;code&gt;user&lt;/code&gt;, etc.
+See &lt;a class="link" href="https://github.com/CaiJimmy/hugo-theme-stack/tree/master/assets/icons" target="_blank" rel="noopener"
+ &gt;here&lt;/a&gt; for details.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;h2 id="left-sidebar-setup"&gt;Left Sidebar Setup
+&lt;/h2&gt;&lt;blockquote class="alert alert-important"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📌&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Important&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;In this section, if you&amp;rsquo;ve set the &lt;code&gt;contentDir&lt;/code&gt; folder variable, then &lt;code&gt;content&lt;/code&gt; folder refers to your set corresponding &lt;code&gt;contentDir&lt;/code&gt; folder.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;p&gt;If you&amp;rsquo;ve successfully cloned the repository, then there are already a few examples under your &lt;code&gt;content&lt;/code&gt; folder. So I&amp;rsquo;ll just briefly explain the existing examples and elaborate on how to create more sections.&lt;/p&gt;
+&lt;h3 id="example-explanation"&gt;Example explanation
+&lt;/h3&gt;&lt;p&gt;There&amp;rsquo;s a file named &lt;code&gt;_index.md&lt;/code&gt; under the &lt;code&gt;content&lt;/code&gt; folder:&lt;/p&gt;
+&lt;blockquote class="alert alert-note"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📝&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Note&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;Example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;menu&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;main&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Home&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;weight&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;params&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;icon&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;home&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;p&gt;Here, setting &lt;code&gt;weight&lt;/code&gt; to 1 puts this button at the top of the left sidebar, and setting &lt;code&gt;icon&lt;/code&gt; to &lt;code&gt;home&lt;/code&gt; uses the default home icon.&lt;/p&gt;
+&lt;p&gt;Under the &lt;code&gt;content\page&lt;/code&gt; folder, there are &lt;code&gt;archives&lt;/code&gt; and &lt;code&gt;search&lt;/code&gt; folders, each containing an &lt;code&gt;index.md&lt;/code&gt;. The only difference from the homepage&amp;rsquo;s &lt;code&gt;_index.md&lt;/code&gt; is the addition of a &lt;code&gt;layout&lt;/code&gt; setting. Different &lt;code&gt;layout&lt;/code&gt; names have default implementations.&lt;/p&gt;
+&lt;h3 id="creating-new-sections"&gt;Creating new sections
+&lt;/h3&gt;&lt;p&gt;Create a new folder under &lt;code&gt;content\page&lt;/code&gt;, naming it whatever button name you want.&lt;/p&gt;
+&lt;blockquote class="alert alert-warning"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;⚠️&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Warning&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;Don&amp;rsquo;t rename the &lt;code&gt;page&lt;/code&gt; folder!&lt;/p&gt;
+&lt;p&gt;If the folder name is not &lt;code&gt;page&lt;/code&gt;, some features may not work (search)&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;p&gt;Add an &lt;code&gt;index.md&lt;/code&gt; file in the new folder, modifying based on the home template.&lt;/p&gt;
+&lt;h2 id="categories-and-tags-setup"&gt;Categories and Tags Setup
+&lt;/h2&gt;&lt;blockquote class="alert alert-important"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📌&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Important&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;In this section, if you&amp;rsquo;ve set the &lt;code&gt;contentDir&lt;/code&gt; folder variable, then &lt;code&gt;content&lt;/code&gt; folder refers to your set corresponding &lt;code&gt;contentDir&lt;/code&gt; folder.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;h3 id="categories"&gt;Categories
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Create a folder named &lt;code&gt;categories&lt;/code&gt; under the &lt;code&gt;content&lt;/code&gt; folder. Inside it, create a new folder with your desired category name.&lt;/li&gt;
+&lt;li&gt;Create a Markdown file named &lt;code&gt;_index.md&lt;/code&gt; in the new folder, modify based on the following template:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class="alert alert-note"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📝&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Note&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;Example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;span class="lnt"&gt;6
+&lt;/span&gt;&lt;span class="lnt"&gt;7
+&lt;/span&gt;&lt;span class="lnt"&gt;8
+&lt;/span&gt;&lt;span class="lnt"&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Example Category&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;A description of this category&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;style&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;#2a9d8f&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nt"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;#fff&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;p&gt;Parameter meanings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: Category name. Clicking the article&amp;rsquo;s category badge on the homepage takes you to the specific category page.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;description&lt;/code&gt;: Category description, shown on the specific category page&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;image&lt;/code&gt;: Cover image of the category, shown on the specific category page&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;style&lt;/code&gt;: Sets the color of the category badge when articles are displayed on the homepage.
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;background&lt;/code&gt;: Background color&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;color&lt;/code&gt;: Text color.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="tags"&gt;Tags
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Create a folder named &lt;code&gt;tags&lt;/code&gt; under the &lt;code&gt;content&lt;/code&gt; folder. Inside it, create a new folder with your desired tag name.&lt;/li&gt;
+&lt;li&gt;Create a Markdown file named &lt;code&gt;_index.md&lt;/code&gt; in the new folder, modify based on the following template:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class="alert alert-note"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📝&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Note&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;Example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;Example Category&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;A description of this category&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;image&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;blockquote class="alert alert-note"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📝&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Note&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;The only difference between tags and categories is that you can&amp;rsquo;t customize the badge color.&lt;/p&gt;
+&lt;p&gt;But at the same time, the right sidebar set via &lt;code&gt;widgets&lt;/code&gt; doesn&amp;rsquo;t display the category&amp;rsquo;s custom color either.&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;h2 id="creating-post-archetypes"&gt;Creating Post Archetypes
+&lt;/h2&gt;&lt;p&gt;According to &lt;a class="link" href="https://gohugo.io/content-management/archetypes" target="_blank" rel="noopener"
+ &gt;Hugo&amp;rsquo;s official documentation&lt;/a&gt;, there are two ways to create archetypes:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Single Markdown file form&lt;/li&gt;
+&lt;li&gt;Folder form&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Both methods require creating a new folder named &lt;code&gt;archetypes&lt;/code&gt; under the root directory.&lt;/p&gt;
+&lt;h3 id="single-markdown-file-form-not-recommended"&gt;Single Markdown file form (not recommended)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Create a Markdown file named &lt;code&gt;default.md&lt;/code&gt; under the &lt;code&gt;archetypes&lt;/code&gt; folder. Refer to the following template (official) for the content:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class="alert alert-note"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📝&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Note&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;Example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;date&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{{ .Date }}&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;draft&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{{ replace .File.ContentBaseName `-` ` ` | title }}&amp;#39;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;date&lt;/code&gt;: Article creation date&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;draft&lt;/code&gt;: Whether the article is a draft. If it&amp;rsquo;s a draft, it won&amp;rsquo;t be published to the website.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: This bit replaces &lt;code&gt;-&lt;/code&gt; in the filename with spaces and assigns the result to &lt;code&gt;title&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After setting this up, you can use &lt;code&gt;hugo new content post/my-first-post.md&lt;/code&gt; to create a new file under the post folder. But because of the previous setting, only articles inside folders are loaded correctly, so you need to wrap it in another folder for it to work properly.&lt;/p&gt;
+&lt;h3 id="folder-form-recommended"&gt;Folder form (recommended)
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Create a folder named &lt;code&gt;post&lt;/code&gt; under the &lt;code&gt;archetypes&lt;/code&gt; folder, and add a Markdown file named &lt;code&gt;index.md&lt;/code&gt; inside it.
+Below is my template:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote class="alert alert-note"&gt;
+ &lt;div class="alert-header"&gt;
+ &lt;span class="alert-icon"&gt;📝&lt;/span&gt;
+ &lt;span class="alert-title"&gt;Note&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="alert-body"&gt;
+ &lt;p&gt;Example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;{{ replace .File.ContentBaseName &amp;#34;&lt;/span&gt;-&lt;span class="s2"&gt;&amp;#34; &amp;#34;&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34; | humanize | title }}&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;description&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;slug&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;{{ .Name }}&amp;#34;&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;date&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;{{&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;.Date | time.Format &amp;#34;2006-01-02&amp;#34;}}&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;Category&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;tags&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;Tag1&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;Tag2&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt; &lt;/span&gt;- &lt;span class="l"&gt;Tag3&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nn"&gt;---&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt;: Used the humanize function to make the title more readable&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;description&lt;/code&gt;: Article content overview&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;slug&lt;/code&gt;: Article identifier&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;date&lt;/code&gt;: Article creation date, only includes year, month, day&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;categories&lt;/code&gt;: Article categories&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tags&lt;/code&gt;: Article tags&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After setting this up, you can use &lt;code&gt;hugo new content post/my-first-post&lt;/code&gt; to create a new folder under the post folder. Just write the article content you want into &lt;code&gt;index.md&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="small-details-pitfalls"&gt;Small Details (Pitfalls)
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;In &lt;code&gt;config.toml&lt;/code&gt;, you can add an entry &lt;code&gt;timeZone = &amp;quot;Asia/Shanghai&amp;quot;&lt;/code&gt;. The purpose of this setting is to let Hugo determine whether to publish a corresponding article based on the set time zone when building your website.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;By default, Hugo uses the computer&amp;rsquo;s time zone at build time to determine the current time, but in some cases it also uses UTC +0 for judgment. So if you push your website content to GitHub for building, when your local time is already the next day, the time Hugo gets might still be the previous day, so the pushed article won&amp;rsquo;t be published.&lt;/p&gt;
+&lt;h2 id="adding-a-comment-system"&gt;Adding a Comment System
+&lt;/h2&gt;&lt;p&gt;The last step is adding a comment system to the blog. This blog chose &lt;a class="link" href="https://lxymahatma.github.io/" target="_blank" rel="noopener"
+ &gt;giscus&lt;/a&gt;.
+We won&amp;rsquo;t go into the basic setup of giscus, just talk about how to set it up in your personal blog:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Copy the script from giscus&amp;rsquo;s &lt;code&gt;Enable giscus&lt;/code&gt; section&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Delete &lt;code&gt;disqusShortname = &amp;quot;hugo-theme-stack&amp;quot;&lt;/code&gt; from &lt;code&gt;config.toml&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In &lt;code&gt;params.toml&lt;/code&gt;, you can see:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c"&gt;## Comments&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;enabled&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;provider&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;disqus&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Set &lt;code&gt;provider&lt;/code&gt; to &lt;code&gt;&amp;quot;giscus&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Scrolling down further you can see:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-toml" data-lang="toml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;comments&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;giscus&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;repo&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;repoID&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;category&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;categoryID&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;mapping&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;lightTheme&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;darkTheme&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;reactionsEnabled&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nx"&gt;emitMetadata&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Now fill in the information from the copied script. For &lt;code&gt;lightTheme&lt;/code&gt; and &lt;code&gt;darkTheme&lt;/code&gt;, if you&amp;rsquo;re lazy you can just fill in &lt;code&gt;light&lt;/code&gt; and &lt;code&gt;dark&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="final-push-and-setup"&gt;Final Push and Setup
+&lt;/h2&gt;&lt;p&gt;When all the above settings are done, you can push all the changes back to the GitHub repository. If you used a template or copied the &lt;code&gt;.github&lt;/code&gt; folder during the repository creation step, GitHub Action should now try to deploy the website.&lt;/p&gt;
+&lt;p&gt;But! There&amp;rsquo;s still one most important step left:
+The default GitHub workflow&amp;rsquo;s last step is pushing all the generated stuff to the &lt;code&gt;gh-pages&lt;/code&gt; branch, so we need one more step.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Enter the repository&amp;rsquo;s settings page and select &lt;code&gt;Pages&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Under &lt;code&gt;Build and deployment&lt;/code&gt;, set &lt;code&gt;Source&lt;/code&gt; to &lt;code&gt;Deploy from a branch&lt;/code&gt;, choose &lt;code&gt;gh-pages&lt;/code&gt; as the Branch, and &lt;code&gt;/(root)&lt;/code&gt; as the path&lt;/li&gt;
+&lt;li&gt;Click &lt;code&gt;Save&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;And that&amp;rsquo;s it! Mission accomplished! Wait a bit and then go to your webpage — you should see your blog has been successfully deployed on GitHub Pages!&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id="acknowledgments"&gt;Acknowledgments
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/CaiJimmy" target="_blank" rel="noopener"
+ &gt;CaiJimmy&lt;/a&gt; for making the Hugo Stack theme&lt;/li&gt;
+&lt;li&gt;&lt;a class="link" href="https://github.com/BYJRK" target="_blank" rel="noopener"
+ &gt;十月的寒流&lt;/a&gt;&amp;rsquo;s personal blog repository provided a lot of template help when I was trying to make my own blog&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Thanks for reading this far! If you have any questions about this article, leave a comment below. But since I&amp;rsquo;m not exactly an expert in this stuff and this article is just sharing experience, I can only answer questions within my abilities.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;Remember to drop an emoji or comment after reading (jk)&lt;/del&gt;&lt;/p&gt;</description></item></channel></rss>
