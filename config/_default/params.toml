@@ -1,6 +1,5 @@
 # Pages placed under these sections will be shown on homepage and archive page.
 mainSections = ["post"]
-# Output page's full content in RSS.
 favicon = "img/favicon.png"
 rssFullContent = true
 
@@ -46,7 +45,6 @@ rssFullContent = true
 [imageProcessing.content]
     enabled = true
 
-## Comments
 [comments]
     enabled = true
     provider = "giscus"
