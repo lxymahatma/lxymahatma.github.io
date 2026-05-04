@@ -52,16 +52,11 @@ rssFullContent = true
     card = "summary_large_image"
     site = ""
 
-[defaultImage.opengraph]
-    enabled = false
-    local = false
-    src = ""
-
 [colorScheme]
     default = "auto"
     toggle = true
 
-[imageProcessing.cover]
+[imageProcessing.thumbnail]
     enabled = true
 
 [imageProcessing.content]
