@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository holds the resources for [lxymahatma's personal blog](https://lxymahatma.github.io)
+This repository holds the resources for [lxymahatma's personal blog](https://blog.lxymahatma.com)
 
 **The blog is powered by [Hugo](https://gohugo.io) and [Stack Theme](https://github.com/CaiJimmy/hugo-theme-stack)**
 
