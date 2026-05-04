@@ -51,54 +51,6 @@ rssFullContent = true
     enabled = true
     provider = "giscus"
 
-    [comments.disqusjs]
-        admin = ""
-        adminLabel = ""
-        apiKey = ""
-        apiUrl = ""
-        shortname = ""
-
-    [comments.utterances]
-        issueTerm = "pathname"
-        label = ""
-        repo = ""
-
-    [comments.remark42]
-        host = ""
-        locale = ""
-        site = ""
-
-    [comments.vssue]
-        autoCreateIssue = false
-        clientId = ""
-        clientSecret = ""
-        owner = ""
-        platform = ""
-        repo = ""
-
-    [comments.waline]
-        avatar = ""
-        emoji = ["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"]
-        lang = ""
-        placeholder = ""
-        requiredMeta = ["email", "name", "url"]
-        serverURL = ""
-        visitor = ""
-
-        [comments.waline.locale]
-            admin = "Admin"
-
-    [comments.twikoo]
-        envId = ""
-        lang = ""
-        path = ""
-        region = ""
-
-    [comments.cactus]
-        defaultHomeserverUrl = "https://matrix.cactus.chat:8448"
-        serverName = "cactus.chat"
-        siteName = ""
-
     [comments.giscus]
         category = "Announcements"
         categoryID = "DIC_kwDOMI8xEs4CgF13"
@@ -109,14 +61,3 @@ rssFullContent = true
         reactionsEnabled = 1
         repo = "lxymahatma/lxymahatma.github.io"
         repoID = "R_kgDOMI8xEg"
-
-    [comments.gitalk]
-        admin = ""
-        clientID = ""
-        clientSecret = ""
-        owner = ""
-        repo = ""
-
-    [comments.cusdis]
-        host = ""
-        id = ""
