@@ -1,6 +1,6 @@
 # Pages placed under these sections will be shown on homepage and archive page.
 mainSections = ["post"]
-favicon = "img/favicon.png"
+favicon = "img/favicon.svg"
 rssFullContent = true
 
 [footer]

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <style>
+    .paper   { fill: #2c3e50; }
+    .lines   { stroke: #aeb9c4; }
+    .penbody { fill: #7d93a8; }
+    .nib     { fill: #5d7793; }
+    @media (prefers-color-scheme: dark) {
+      .paper   { fill: #ffffff; }
+      .lines   { stroke: #9fb3c8; }
+      .penbody { fill: #2c3e50; }
+      .nib     { fill: #1f2d3d; }
+    }
+  </style>
+  <g transform="translate(-51.5,-91.5) scale(1.25)">
+    <rect x="92" y="150" width="240" height="296" rx="26" fill="#5d7793" />
+    <rect class="paper" x="140" y="96" width="252" height="312" rx="24" />
+    <g class="lines" stroke-width="17" stroke-linecap="round">
+      <line x1="180" y1="170" x2="352" y2="170" />
+      <line x1="180" y1="216" x2="352" y2="216" />
+      <line x1="180" y1="262" x2="300" y2="262" />
+    </g>
+    <g transform="rotate(42 300 340)">
+      <rect class="penbody" x="276" y="150" width="46" height="250" rx="13" />
+      <rect x="276" y="150" width="46" height="44" rx="11" fill="#f1c40f" />
+      <polygon class="nib" points="276,400 322,400 299,448" />
+      <polygon points="293,430 305,430 299,448" fill="#ffffff" />
+    </g>
+  </g>
+</svg>
